@@ -29,6 +29,8 @@ class SelectCollectionViewController: UICollectionViewController {
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
         navigationItem.scrollEdgeAppearance?.backgroundColor =  backgroundcolor
+        
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

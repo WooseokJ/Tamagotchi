@@ -18,7 +18,6 @@ class SelectCollectionViewCell: UICollectionViewCell {
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
    
-        
         selectLabelback.backgroundColor = backgroundcolor
         selectLabelback.layer.borderWidth = 1
         selectLabelback.layer.cornerRadius = 4

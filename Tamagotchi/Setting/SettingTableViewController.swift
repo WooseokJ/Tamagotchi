@@ -33,6 +33,8 @@ class SettingTableViewController: UITableViewController {
         view.backgroundColor = backgroundcolor
         tableView.rowHeight = 60
         navigationItem.title = "설정"
+        navigationItem.backButtonTitle = " "
+        navigationItem.titleView?.tintColor = fontcolor
         
     }
 
@@ -63,6 +65,11 @@ class SettingTableViewController: UITableViewController {
         switch indexPath.row{
         case 0 :guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RenameViewController") else {return}
             self.navigationController?.pushViewController(nextVC, animated: true)
+            navigationItem.backButtonTitle = "설정"
+            navigationItem.titleView?.tintColor = fontcolor
+
+           
+            
         case 1:
             let sb = UIStoryboard(name:"Main",bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "SelectCollectionViewController") as! SelectCollectionViewController
@@ -78,6 +85,7 @@ class SettingTableViewController: UITableViewController {
         default:break
             
         }
+    
         
         
         
