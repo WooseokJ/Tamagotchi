@@ -8,3 +8,10 @@
 import UIKit
 
 
+extension UIButton{
+    func DetailDesign(){
+        self.layer.borderWidth = 1
+    }
+    
+    
+}

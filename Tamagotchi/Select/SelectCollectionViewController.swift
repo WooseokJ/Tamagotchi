@@ -13,7 +13,7 @@ class SelectCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewFlowLayout()
         let spacing : CGFloat = 0
         let layoutwidth = UIScreen.main.bounds.width - (spacing * 4)
-        layout.itemSize = CGSize(width: (layoutwidth / 3), height: (layoutwidth / 3) * 1.2)
+        layout.itemSize = CGSize(width: (layoutwidth / 3), height: (layoutwidth / 3) * 1.1)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
@@ -25,7 +25,7 @@ class SelectCollectionViewController: UICollectionViewController {
         navigationBarAppearance.configureWithDefaultBackground()
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
-        navigationItem.standardAppearance?.backgroundColor =  backgroundcolor
+        navigationItem.scrollEdgeAppearance?.backgroundColor =  backgroundcolor
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,11 +46,11 @@ class SelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         if let DetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-            
-            
-            
-            
-            present(DetailViewController, animated: true, completion: nil)
+            let nav = UINavigationController(rootViewController: DetailViewController)
+            // step 2.5 어떤 방식으로 띄울지 결정(옵션)
+//            nav.modalPresentationStyle = .fullScreen  //이것만해서는 alpha 값 변화주어도 실제 뷰 변화없음.
+            nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
+            present(nav, animated: true, completion: nil)
         }
     
     }
