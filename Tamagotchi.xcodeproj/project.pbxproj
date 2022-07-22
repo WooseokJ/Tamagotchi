@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E18CF9AA288AAC1E005C99E7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9A9288AAC1E005C99E7 /* Extension.swift */; };
+		E18CF9AC288AB1A1005C99E7 /* TamaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */; };
+		E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */; };
+		E18CF9B9288AB5A3005C99E7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9B8288AB5A3005C99E7 /* Kingfisher */; };
+		E18CF9BC288AB5D0005C99E7 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */; };
+		E1C6CB02288A708300FF8C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB01288A708300FF8C32 /* AppDelegate.swift */; };
+		E1C6CB04288A708300FF8C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */; };
+		E1C6CB06288A708300FF8C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB05288A708300FF8C32 /* ViewController.swift */; };
+		E1C6CB09288A708300FF8C32 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C6CB07288A708300FF8C32 /* Select.storyboard */; };
+		E1C6CB0B288A708700FF8C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C6CB0A288A708700FF8C32 /* Assets.xcassets */; };
+		E1C6CB0E288A708700FF8C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C6CB0C288A708700FF8C32 /* LaunchScreen.storyboard */; };
+		E1C6CB1A288A750F00FF8C32 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB19288A750E00FF8C32 /* DetailViewController.swift */; };
+		E1C6CB22288A763D00FF8C32 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB21288A763D00FF8C32 /* SettingTableViewController.swift */; };
+		E1C6CB24288A764C00FF8C32 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB23288A764C00FF8C32 /* SettingTableViewCell.swift */; };
+		E1C6CB26288A773400FF8C32 /* RenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB25288A773400FF8C32 /* RenameViewController.swift */; };
+		E1C6CB28288A775E00FF8C32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB27288A775E00FF8C32 /* MainViewController.swift */; };
+		E1C6CB2A288A77A000FF8C32 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB29288A77A000FF8C32 /* SelectCollectionViewController.swift */; };
+		E1C6CB2C288A77B400FF8C32 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB2B288A77B400FF8C32 /* SelectCollectionViewCell.swift */; };
+		E1E84104288A938900D0867A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E84103288A938900D0867A /* Setting.storyboard */; };
+		E1E84106288A939200D0867A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E84105288A939200D0867A /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E18CF9A9288AAC1E005C99E7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamaInfo.swift; sourceTree = "<group>"; };
+		E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTamagotchi.swift; sourceTree = "<group>"; };
+		E1C6CAFE288A708300FF8C32 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C6CB01288A708300FF8C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E1C6CB05288A708300FF8C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1C6CB08288A708300FF8C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Select.storyboard; sourceTree = "<group>"; };
+		E1C6CB0A288A708700FF8C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1C6CB0D288A708700FF8C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1C6CB0F288A708700FF8C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C6CB19288A750E00FF8C32 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E1C6CB21288A763D00FF8C32 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		E1C6CB23288A764C00FF8C32 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		E1C6CB25288A773400FF8C32 /* RenameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameViewController.swift; sourceTree = "<group>"; };
+		E1C6CB27288A775E00FF8C32 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Tamagotchi/Main/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		E1C6CB29288A77A000FF8C32 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
+		E1C6CB2B288A77B400FF8C32 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1E84103288A938900D0867A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		E1E84105288A939200D0867A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1C6CAFB288A708300FF8C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18CF9B9288AB5A3005C99E7 /* Kingfisher in Frameworks */,
+				E18CF9BC288AB5D0005C99E7 /* TextFieldEffects in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1C6CAF5288A708300FF8C32 = {
+			isa = PBXGroup;
+			children = (
+				E1C6CB00288A708300FF8C32 /* Tamagotchi */,
+				E1C6CAFF288A708300FF8C32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1C6CAFF288A708300FF8C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6CAFE288A708300FF8C32 /* Tamagotchi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1C6CB00288A708300FF8C32 /* Tamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				E18CF9A9288AAC1E005C99E7 /* Extension.swift */,
+				E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */,
+				E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */,
+				E1C6CB20288A760B00FF8C32 /* Detail */,
+				E1C6CB1F288A75C900FF8C32 /* Select */,
+				E1C6CB1E288A75BF00FF8C32 /* Rename */,
+				E1C6CB1D288A759900FF8C32 /* Setting */,
+				E1C6CB1C288A756500FF8C32 /* Basic */,
+				E1C6CB1B288A755800FF8C32 /* Main */,
+				E1C6CB0F288A708700FF8C32 /* Info.plist */,
+			);
+			path = Tamagotchi;
+			sourceTree = "<group>";
+		};
+		E1C6CB1B288A755800FF8C32 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E1E84105288A939200D0867A /* Main.storyboard */,
+				E1C6CB27288A775E00FF8C32 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E1C6CB1C288A756500FF8C32 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6CB0A288A708700FF8C32 /* Assets.xcassets */,
+				E1C6CB0C288A708700FF8C32 /* LaunchScreen.storyboard */,
+				E1C6CB01288A708300FF8C32 /* AppDelegate.swift */,
+				E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */,
+				E1C6CB05288A708300FF8C32 /* ViewController.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		E1C6CB1D288A759900FF8C32 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E1E84103288A938900D0867A /* Setting.storyboard */,
+				E1C6CB21288A763D00FF8C32 /* SettingTableViewController.swift */,
+				E1C6CB23288A764C00FF8C32 /* SettingTableViewCell.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E1C6CB1E288A75BF00FF8C32 /* Rename */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6CB25288A773400FF8C32 /* RenameViewController.swift */,
+			);
+			path = Rename;
+			sourceTree = "<group>";
+		};
+		E1C6CB1F288A75C900FF8C32 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6CB2B288A77B400FF8C32 /* SelectCollectionViewCell.swift */,
+				E1C6CB29288A77A000FF8C32 /* SelectCollectionViewController.swift */,
+				E1C6CB07288A708300FF8C32 /* Select.storyboard */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		E1C6CB20288A760B00FF8C32 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6CB19288A750E00FF8C32 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1C6CAFD288A708300FF8C32 /* Tamagotchi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C6CB12288A708700FF8C32 /* Build configuration list for PBXNativeTarget "Tamagotchi" */;
+			buildPhases = (
+				E1C6CAFA288A708300FF8C32 /* Sources */,
+				E1C6CAFB288A708300FF8C32 /* Frameworks */,
+				E1C6CAFC288A708300FF8C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tamagotchi;
+			packageProductDependencies = (
+				E18CF9B8288AB5A3005C99E7 /* Kingfisher */,
+				E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */,
+			);
+			productName = Tamagotchi;
+			productReference = E1C6CAFE288A708300FF8C32 /* Tamagotchi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1C6CAF6288A708300FF8C32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					E1C6CAFD288A708300FF8C32 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = E1C6CAF9288A708300FF8C32 /* Build configuration list for PBXProject "Tamagotchi" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1C6CAF5288A708300FF8C32;
+			packageReferences = (
+				E18CF9B7288AB5A3005C99E7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+			);
+			productRefGroup = E1C6CAFF288A708300FF8C32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1C6CAFD288A708300FF8C32 /* Tamagotchi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1C6CAFC288A708300FF8C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E84106288A939200D0867A /* Main.storyboard in Resources */,
+				E1C6CB0E288A708700FF8C32 /* LaunchScreen.storyboard in Resources */,
+				E1C6CB0B288A708700FF8C32 /* Assets.xcassets in Resources */,
+				E1C6CB09288A708300FF8C32 /* Select.storyboard in Resources */,
+				E1E84104288A938900D0867A /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1C6CAFA288A708300FF8C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C6CB2C288A77B400FF8C32 /* SelectCollectionViewCell.swift in Sources */,
+				E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */,
+				E1C6CB22288A763D00FF8C32 /* SettingTableViewController.swift in Sources */,
+				E1C6CB06288A708300FF8C32 /* ViewController.swift in Sources */,
+				E1C6CB02288A708300FF8C32 /* AppDelegate.swift in Sources */,
+				E18CF9AC288AB1A1005C99E7 /* TamaInfo.swift in Sources */,
+				E18CF9AA288AAC1E005C99E7 /* Extension.swift in Sources */,
+				E1C6CB1A288A750F00FF8C32 /* DetailViewController.swift in Sources */,
+				E1C6CB26288A773400FF8C32 /* RenameViewController.swift in Sources */,
+				E1C6CB04288A708300FF8C32 /* SceneDelegate.swift in Sources */,
+				E1C6CB2A288A77A000FF8C32 /* SelectCollectionViewController.swift in Sources */,
+				E1C6CB24288A764C00FF8C32 /* SettingTableViewCell.swift in Sources */,
+				E1C6CB28288A775E00FF8C32 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1C6CB07288A708300FF8C32 /* Select.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C6CB08288A708300FF8C32 /* Base */,
+			);
+			name = Select.storyboard;
+			sourceTree = "<group>";
+		};
+		E1C6CB0C288A708700FF8C32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C6CB0D288A708700FF8C32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1C6CB10288A708700FF8C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1C6CB11288A708700FF8C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1C6CB13288A708700FF8C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5MHUF29PV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E1C6CB14288A708700FF8C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5MHUF29PV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1C6CAF9288A708300FF8C32 /* Build configuration list for PBXProject "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C6CB10288A708700FF8C32 /* Debug */,
+				E1C6CB11288A708700FF8C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1C6CB12288A708700FF8C32 /* Build configuration list for PBXNativeTarget "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C6CB13288A708700FF8C32 /* Debug */,
+				E1C6CB14288A708700FF8C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E18CF9B7288AB5A3005C99E7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E18CF9B8288AB5A3005C99E7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E18CF9B7288AB5A3005C99E7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E1C6CAF6288A708300FF8C32 /* Project object */;
+}
