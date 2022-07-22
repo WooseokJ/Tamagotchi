@@ -5,6 +5,7 @@ import Kingfisher
 
 
 class SelectCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var selectLabelback: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectImage: UIImageView!
     var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
@@ -15,11 +16,12 @@ class SelectCollectionViewCell: UICollectionViewCell {
         nameLabel.text = data.name
         nameLabel.textColor = fontcolor
         nameLabel.textAlignment = .center
-        nameLabel.numberOfLines = 1
-        nameLabel.layer.borderWidth = 0.1
+        nameLabel.numberOfLines = 0
+   
         
- 
-            
+        selectLabelback.backgroundColor = backgroundcolor
+        selectLabelback.layer.borderWidth = 1
+        selectLabelback.layer.cornerRadius = 4
         
         selectImage.image = UIImage(named: data.imageName)
         selectImage.backgroundColor = backgroundcolor

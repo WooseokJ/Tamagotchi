@@ -4,6 +4,7 @@ import UIKit
 
 class SelectCollectionViewController: UICollectionViewController {
     var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
+    var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
     var Tamals = TamaInfo().TamaAttribute
     
     override func viewDidLoad() {
@@ -21,6 +22,8 @@ class SelectCollectionViewController: UICollectionViewController {
         
         collectionView.collectionViewLayout = layout
         navigationItem.title = "다마고치 선택하기"
+        navigationItem.titleView?.tintColor = fontcolor
+        
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         navigationItem.scrollEdgeAppearance = navigationBarAppearance

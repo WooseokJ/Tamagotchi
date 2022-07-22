@@ -8,14 +8,9 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
+ 
+    @IBOutlet weak var SettingButton: UIButton!
+    @IBOutlet weak var SettingLabel: UILabel!
+    
+    @IBOutlet weak var SettingImage: UIImageView!
 }
