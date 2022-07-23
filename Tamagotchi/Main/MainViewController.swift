@@ -16,22 +16,34 @@ class MainViewController: UIViewController {
     @IBOutlet weak var MainImageView: UIImageView!
     @IBOutlet weak var MainEatingTextField: UITextField!
     @IBOutlet weak var MainDrinkingTextField: UITextField!
+    
     @IBOutlet weak var MainLevelLabel: UILabel!
+    
     @IBOutlet weak var MainNameImage: UIView!
     @IBOutlet weak var MainTamaName: UILabel!
     @IBOutlet weak var MainDrinking: UIButton!
     @IBOutlet weak var MainEating: UIButton!
     
+    @IBOutlet weak var topImageView: UIView!
+    
+    
     //1. 값설정
     var mainCenterLabel : String?
     var mainCenterImage : String?
+    var selectNumber : Int?
+    
     var textEatingContent : Int = 0
     var TamaData = TamaInfo().TamaAttribute
-    var ls : [Int] = [1, 0, 0]
         
     
     var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
     var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
+    
+    var tamaName = "대장"
+    
+    var level = 1.0
+    var eatcnt = 0.0
+    var drinkcnt = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +51,7 @@ class MainViewController: UIViewController {
         let image = UIImage(systemName: "person")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(SettingButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = fontcolor
-        navigationItem.title = "\(NameClass.tamaName)님의 다마고치"
+        navigationItem.title = "\(tamaName)님의 다마고치"
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
@@ -48,22 +60,35 @@ class MainViewController: UIViewController {
         navigationItem.scrollEdgeAppearance?.backgroundColor =  backgroundcolor
         navigationItem.backButtonTitle = " "
         
-        
         MainTopimage.image = UIImage(named: "bubble")
-        MainImageView.image = UIImage(named: "1-1")
+        print(selectNumber!)
+        print(NameClass.growImageNumber)
+        MainImageView.image = UIImage(named: "\(selectNumber!)-\(NameClass.growImageNumber)") //지워도됨
 
         MainTamaName.text = mainCenterLabel
         
-        let Randomcontent = ["\(NameClass.tamaName)님 오늘 날씨가 좋네요.","\(NameClass.tamaName)님 구조체 클래스차이알아?","\(NameClass.tamaName) 님 나죽어...ㅠㅠ","\(NameClass.tamaName)님 저 날밤샛어요ㅠㅠ"]
-        let selectContent = Int.random(in: 0...Randomcontent.count-1)
-        MainContentLabel.text = Randomcontent[selectContent]
+        MainContentLabel.text = "\(tamaName)님 오늘 날씨가 좋네요."
         MainContentLabel.textAlignment = .center
-        MainLevelLabel.text = "LV \(ls[0]) 밥알 \(ls[1])개 물방울 \(ls[2])"
+        MainLevelLabel.text = "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainLevelLabel.textAlignment = .center
         MainNameImage.backgroundColor = backgroundcolor
-  
-        MainTamaName.layer.cornerRadius = 2
+        MainEating.tintColor = fontcolor
+        MainDrinking.tintColor = fontcolor
         
+        MainTamaName.layer.cornerRadius = 2
+        MainTamaName.backgroundColor = backgroundcolor
+        MainDrinking.setTitle("물주기", for: .normal)
+        MainDrinking.setImage(UIImage(systemName: "drop.circle"), for: .normal)
+        MainEating.setTitle("밥먹기", for: .normal)
+        MainEating.setImage(UIImage(systemName: "leaf.circle"), for: .normal)
+        
+        MainEatingTextField.backgroundColor = backgroundcolor
+        MainDrinkingTextField.backgroundColor = backgroundcolor
+        MainDrinkingTextField.placeholder = "물주세용"
+        MainDrinkingTextField.textAlignment = .center
+        MainEatingTextField.placeholder = "밥주세용"
+        MainEatingTextField.textAlignment = .center
+        topImageView.backgroundColor = backgroundcolor
         
         MainEatingTextField.keyboardType = .numberPad
         MainDrinkingTextField.keyboardType = .numberPad
@@ -82,75 +107,93 @@ class MainViewController: UIViewController {
     // 밥주기 버튼
     @IBAction func EatingButton(_ sender: UIButton) {
         // 레벨계산
-        let levelChagned : Double = Double((ls[1]/5)) + Double((ls[2] / 2))
-        
-        //이거하면 레벨계산은 잘됨.
-        switch Int(levelChagned) {
-            case 0..<20  :
-                ls[0] = 1
-                imageShow(1)
-            case 20..<30 :
-                ls[0] = 2
-                imageShow(2)
-            case 30..<40 :
-                ls[0] = 3
-                imageShow(3)
-            case 40..<50 :
-                ls[0] = 4
-                 imageShow(4)
-            case 50..<60 :
-                ls[0] = 5
-                imageShow(5)
-            case 60..<70 :
-                ls[0] = 6
-                imageShow(6)
-            case 70..<80 :
-                ls[0] = 7
-                imageShow(7)
-            case 80..<90 :
-                ls[0] = 8
-                imageShow(8)
-            case 90..<100 :
-                ls[0] = 9
-                imageShow(9)
-            case 100..<Int.max :
-                ls[0] = 10
-                imageShow(9)
-            default :break
-        }
-
-        
-        
-        
-        
-        ls[1]+=1
-        MainLevelLabel.text = "LV \(ls[0]) 밥알 \(ls[1])개 물방울 \(ls[2])"
+        selectLavel()
+        eatcnt+=1
+        MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainEatingTextField.text = ""
+        RandomText()
     }
-    func imageShow(_ num : Int){
-        MainImageView.image = UIImage(named: "1-\(num)")
-    }
+
     
     //밥주기 텍스트필드
     @IBAction func InputEating(_ sender: UITextField) {
         guard let count = Double(sender.text ?? "0") else { return  }
-        ls[1] += Int(count-1)
+        eatcnt += Double(count-1.0)
     }
     
     //물주기 버튼
     @IBAction func DrinkningButton(_ sender: UIButton) {
-        ls[2] += 1
-        MainLevelLabel.text = "LV \(ls[0]) 밥알 \(ls[1])개 물방울 \(ls[2])"
+        selectLavel()
+        drinkcnt += 1
+        print(level)
+        MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainDrinkingTextField.text = ""
+        RandomText()
     
     }
     
-    // 문주기 텍스트필드
+    // 물주기 텍스트필드
     @IBAction func InputDrinking(_ sender: UITextField) {
         guard let count = Double(sender.text ?? "0") else { return  }
-        ls[2] += Int(count-1)
+        drinkcnt += Double(count-1.0)
+    }
+    func imageShow(){
+        MainImageView.image = UIImage(named: "\(selectNumber!)-\(NameClass.growImageNumber)")
+    }
+    func selectLavel(){
+        let levelChagned : Double = Double((eatcnt/5)) + Double((drinkcnt / 2))
+
+        //이거하면 레벨계산은 잘됨.
+        switch Int(levelChagned) {
+            case 0..<20  :
+            level = 1
+            NameClass.growImageNumber=1
+            imageShow()
+            case 20..<30 :
+            level = 2
+            NameClass.growImageNumber=2
+                imageShow()
+            case 30..<40 :
+            level = 3
+            NameClass.growImageNumber=3
+                imageShow()
+            case 40..<50 :
+            level = 4
+            NameClass.growImageNumber=4
+                 imageShow()
+            case 50..<60 :
+            level = 5
+            NameClass.growImageNumber=5
+                imageShow()
+            case 60..<70 :
+            level = 6
+            NameClass.growImageNumber=6
+                imageShow()
+            case 70..<80 :
+            level = 7
+            NameClass.growImageNumber=7
+                imageShow()
+            case 80..<90 :
+            level = 8
+            NameClass.growImageNumber=8
+                imageShow()
+            case 90..<100 :
+            level = 9
+            NameClass.growImageNumber=9
+                imageShow()
+            case 100..<Int.max :
+            level = 10
+            NameClass.growImageNumber=9
+                imageShow()
+            default :break
+        }
     }
     
+    func RandomText(){
+        let Randomcontent = ["\(tamaName)님 오늘 날씨가 좋네요.","\(tamaName)님 구조체 클래스차이알아?","\(tamaName) 님 나죽어...ㅠㅠ","\(tamaName)님 저 날밤샛어요ㅠㅠ"]
+        let selectContent = Int.random(in: 0...Randomcontent.count-1)
+        MainContentLabel.text = Randomcontent[selectContent]
+    }
     @IBAction func TapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }

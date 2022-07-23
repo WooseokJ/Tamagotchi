@@ -35,7 +35,6 @@ class SettingTableViewController: UITableViewController {
         navigationItem.title = "설정"
         navigationItem.backButtonTitle = " "
         navigationItem.titleView?.tintColor = fontcolor
-        
     }
 
   
@@ -63,32 +62,44 @@ class SettingTableViewController: UITableViewController {
         
         
         switch indexPath.row{
-        case 0 :guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RenameViewController") else {return}
+        case 0 :
+            guard let nextVC = self.storyboard?.instantiateViewController(identifier: "RenameViewController") else {return}
             self.navigationController?.pushViewController(nextVC, animated: true)
             navigationItem.backButtonTitle = "설정"
             navigationItem.titleView?.tintColor = fontcolor
-            
-           
-            
         case 1:
             let sb = UIStoryboard(name:"Main",bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "SelectCollectionViewController") as! SelectCollectionViewController
             NameClass.firstTitle = "타마고치 변경하기"
             NameClass.firstButton = "변경하기"
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
         case 2:
             let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가용?", preferredStyle: UIAlertController.Style.alert)
             let alertCancel = UIAlertAction(title: "아냐", style: .cancel, handler: nil)
-            let alertConfirm = UIAlertAction(title: "웅", style: .default)
+            let alertConfirm = UIAlertAction(title: "웅", style: .default){ (action) in
+                resultButtonClicked()
+            }
+            
             alert.addAction(alertCancel)
             alert.addAction(alertConfirm)
+            
             present(alert, animated: true, completion: nil)
         default:break
             
         }
-        
-        
+        func resultButtonClicked(){
+            // ios 13이상 Scendelegates쓸떄 만 가능
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "SelectCollectionViewController") as! SelectCollectionViewController
+            let nav = UINavigationController(rootViewController: vc)
+            sceneDelegate?.window?.rootViewController = nav
+            sceneDelegate?.window?.makeKeyAndVisible()
+        }
     }
 
 

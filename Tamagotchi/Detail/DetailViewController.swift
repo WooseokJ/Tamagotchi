@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     var takename : String?
     var takeImage : String?
     var takecontent : String?
+    var imageNum : Int?
     
     
     
@@ -82,13 +83,12 @@ class DetailViewController: UIViewController {
         let vc = next.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
-        self.present(nav,animated: false)
-        
-
-        //값전달
-        
         vc.mainCenterLabel = takename
-        vc.mainCenterImage = TamaInfo.TamaGrow[IndexPath.row].imageName
+        
+        vc.selectNumber = imageNum
+        
+        self.present(nav,animated: false)
+
         
         
         

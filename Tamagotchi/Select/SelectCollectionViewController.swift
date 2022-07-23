@@ -7,7 +7,7 @@ class SelectCollectionViewController: UICollectionViewController {
     var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
     var Tamals = TamaInfo().TamaAttribute
     
-    static var ImageNumber : String?
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,14 +56,16 @@ class SelectCollectionViewController: UICollectionViewController {
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
-        present(nav, animated: true, completion: nil)
         let TamaData = Tamals[indexPath.row]
 
         vc.takename = TamaData.name
         vc.takeImage = TamaData.imageName
         vc.takecontent = "저는 \(TamaData.name)입니당 키는 100km 몸무게는 150톤이에용 성격은 화끈하고 날라다닙니당~! 열심히 잘 먹고 잘 클 자신은 있답니당 방실방실!"
-        vc.
-           
+        
+        vc.imageNum = indexPath.row + 1
+        
+        present(nav, animated: true, completion: nil)
+        
         }
     
 }
