@@ -40,10 +40,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-aF-58Z">
-                                            <rect key="frame" x="20" y="122" width="102" height="51"/>
+                                            <rect key="frame" x="15" y="122" width="112" height="51"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-UF-KgO">
-                                                    <rect key="frame" x="3" y="3" width="96" height="45"/>
+                                                    <rect key="frame" x="5" y="3" width="102" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,10 +51,10 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="KFk-UF-KgO" firstAttribute="leading" secondItem="bqQ-aF-58Z" secondAttribute="leading" constant="3" id="1ei-g2-j1Y"/>
+                                                <constraint firstItem="KFk-UF-KgO" firstAttribute="leading" secondItem="bqQ-aF-58Z" secondAttribute="leading" constant="5" id="1ei-g2-j1Y"/>
                                                 <constraint firstAttribute="bottom" secondItem="KFk-UF-KgO" secondAttribute="bottom" constant="3" id="242-Tr-h15"/>
                                                 <constraint firstItem="KFk-UF-KgO" firstAttribute="top" secondItem="bqQ-aF-58Z" secondAttribute="top" constant="3" id="EhB-Pn-rV7"/>
-                                                <constraint firstAttribute="trailing" secondItem="KFk-UF-KgO" secondAttribute="trailing" constant="3" id="giE-so-Y3q"/>
+                                                <constraint firstAttribute="trailing" secondItem="KFk-UF-KgO" secondAttribute="trailing" constant="5" id="giE-so-Y3q"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -62,11 +62,10 @@
                                         <constraint firstItem="lfo-y2-d1C" firstAttribute="leading" secondItem="X9b-kf-0fR" secondAttribute="leading" constant="20" id="GPZ-VE-ZY9"/>
                                         <constraint firstItem="lfo-y2-d1C" firstAttribute="top" secondItem="X9b-kf-0fR" secondAttribute="top" constant="10" id="MHS-Vz-JgQ"/>
                                         <constraint firstAttribute="bottom" secondItem="bqQ-aF-58Z" secondAttribute="bottom" constant="10" id="N3R-9T-LW9"/>
-                                        <constraint firstItem="bqQ-aF-58Z" firstAttribute="width" secondItem="lfo-y2-d1C" secondAttribute="width" id="OUa-M7-clX"/>
                                         <constraint firstAttribute="trailing" secondItem="lfo-y2-d1C" secondAttribute="trailing" constant="20" id="g2E-8r-ele"/>
                                         <constraint firstItem="bqQ-aF-58Z" firstAttribute="top" secondItem="lfo-y2-d1C" secondAttribute="bottom" constant="10" id="k8B-gh-p5v"/>
-                                        <constraint firstAttribute="trailing" secondItem="bqQ-aF-58Z" secondAttribute="trailing" constant="20" id="mpB-sv-so9"/>
-                                        <constraint firstItem="bqQ-aF-58Z" firstAttribute="leading" secondItem="X9b-kf-0fR" secondAttribute="leading" constant="20" id="ujg-zp-lO3"/>
+                                        <constraint firstAttribute="trailing" secondItem="bqQ-aF-58Z" secondAttribute="trailing" constant="15" id="mpB-sv-so9"/>
+                                        <constraint firstItem="bqQ-aF-58Z" firstAttribute="leading" secondItem="X9b-kf-0fR" secondAttribute="leading" constant="15" id="ujg-zp-lO3"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="142" height="183"/>

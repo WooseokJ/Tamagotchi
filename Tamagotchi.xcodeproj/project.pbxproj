@@ -12,7 +12,6 @@
 		E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */; };
 		E18CF9B9288AB5A3005C99E7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9B8288AB5A3005C99E7 /* Kingfisher */; };
 		E18CF9BC288AB5D0005C99E7 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */; };
-		E1B64E19288B37A700222A2F /* TamaChangedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B64E18288B37A700222A2F /* TamaChangedCollectionViewController.swift */; };
 		E1C6CB02288A708300FF8C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB01288A708300FF8C32 /* AppDelegate.swift */; };
 		E1C6CB04288A708300FF8C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */; };
 		E1C6CB06288A708300FF8C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB05288A708300FF8C32 /* ViewController.swift */; };
@@ -27,15 +26,12 @@
 		E1C6CB2A288A77A000FF8C32 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB29288A77A000FF8C32 /* SelectCollectionViewController.swift */; };
 		E1C6CB2C288A77B400FF8C32 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB2B288A77B400FF8C32 /* SelectCollectionViewCell.swift */; };
 		E1E84106288A939200D0867A /* Grow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E84105288A939200D0867A /* Grow.storyboard */; };
-		E1F19281288B017B00FE9B99 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F19280288B017B00FE9B99 /* DetailCollectionViewController.swift */; };
-		E1F19283288B019700FE9B99 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F19282288B019700FE9B99 /* DetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E18CF9A9288AAC1E005C99E7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamaInfo.swift; sourceTree = "<group>"; };
 		E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTamagotchi.swift; sourceTree = "<group>"; };
-		E1B64E18288B37A700222A2F /* TamaChangedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamaChangedCollectionViewController.swift; sourceTree = "<group>"; };
 		E1C6CAFE288A708300FF8C32 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C6CB01288A708300FF8C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +48,6 @@
 		E1C6CB29288A77A000FF8C32 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		E1C6CB2B288A77B400FF8C32 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1E84105288A939200D0867A /* Grow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Grow.storyboard; sourceTree = "<group>"; };
-		E1F19280288B017B00FE9B99 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewController.swift; path = Tamagotchi/Detail/DetailCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
-		E1F19282288B019700FE9B99 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +63,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1B64E17288B378A00222A2F /* TamaChaged */ = {
-			isa = PBXGroup;
-			children = (
-				E1B64E18288B37A700222A2F /* TamaChangedCollectionViewController.swift */,
-			);
-			path = TamaChaged;
-			sourceTree = "<group>";
-		};
 		E1C6CAF5288A708300FF8C32 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +85,6 @@
 				E18CF9A9288AAC1E005C99E7 /* Extension.swift */,
 				E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */,
 				E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */,
-				E1B64E17288B378A00222A2F /* TamaChaged */,
 				E1C6CB20288A760B00FF8C32 /* Detail */,
 				E1C6CB1F288A75C900FF8C32 /* Select */,
 				E1C6CB1E288A75BF00FF8C32 /* Rename */,
@@ -163,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				E1C6CB19288A750E00FF8C32 /* DetailViewController.swift */,
-				E1F19280288B017B00FE9B99 /* DetailCollectionViewController.swift */,
-				E1F19282288B019700FE9B99 /* DetailCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -249,16 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B64E19288B37A700222A2F /* TamaChangedCollectionViewController.swift in Sources */,
 				E1C6CB2C288A77B400FF8C32 /* SelectCollectionViewCell.swift in Sources */,
-				E1F19281288B017B00FE9B99 /* DetailCollectionViewController.swift in Sources */,
 				E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */,
 				E1C6CB22288A763D00FF8C32 /* SettingTableViewController.swift in Sources */,
 				E1C6CB06288A708300FF8C32 /* ViewController.swift in Sources */,
 				E1C6CB02288A708300FF8C32 /* AppDelegate.swift in Sources */,
 				E18CF9AC288AB1A1005C99E7 /* TamaInfo.swift in Sources */,
 				E18CF9AA288AAC1E005C99E7 /* Extension.swift in Sources */,
-				E1F19283288B019700FE9B99 /* DetailCollectionViewCell.swift in Sources */,
 				E1C6CB1A288A750F00FF8C32 /* DetailViewController.swift in Sources */,
 				E1C6CB26288A773400FF8C32 /* RenameViewController.swift in Sources */,
 				E1C6CB04288A708300FF8C32 /* SceneDelegate.swift in Sources */,

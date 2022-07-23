@@ -5,6 +5,7 @@ import Kingfisher
 
 
 class SelectCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var selectLabelback: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectImage: UIImageView!

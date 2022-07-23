@@ -67,12 +67,14 @@ class SettingTableViewController: UITableViewController {
             self.navigationController?.pushViewController(nextVC, animated: true)
             navigationItem.backButtonTitle = "설정"
             navigationItem.titleView?.tintColor = fontcolor
-
+            
            
             
         case 1:
             let sb = UIStoryboard(name:"Main",bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "SelectCollectionViewController") as! SelectCollectionViewController
+            NameClass.firstTitle = "타마고치 변경하기"
+            NameClass.firstButton = "변경하기"
             self.navigationController?.pushViewController(vc, animated: true)
             
         case 2:
@@ -85,8 +87,6 @@ class SettingTableViewController: UITableViewController {
         default:break
             
         }
-    
-        
         
         
     }

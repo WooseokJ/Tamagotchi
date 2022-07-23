@@ -7,6 +7,8 @@ class SelectCollectionViewController: UICollectionViewController {
     var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
     var Tamals = TamaInfo().TamaAttribute
     
+    static var ImageNumber : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +23,7 @@ class SelectCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = spacing
         
         collectionView.collectionViewLayout = layout
-        navigationItem.title = "다마고치 선택하기"
+        navigationItem.title = NameClass.firstTitle
         navigationItem.titleView?.tintColor = fontcolor
         
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -49,18 +51,24 @@ class SelectCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let next = UIStoryboard(name: "Main", bundle: nil)
+        let vc = next.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
+        present(nav, animated: true, completion: nil)
+        let TamaData = Tamals[indexPath.row]
 
-        if let DetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-            let nav = UINavigationController(rootViewController: DetailViewController)
-            // step 2.5 어떤 방식으로 띄울지 결정(옵션)
-//            nav.modalPresentationStyle = .fullScreen  //이것만해서는 alpha 값 변화주어도 실제 뷰 변화없음.
-            nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
-            present(nav, animated: true, completion: nil)
+        vc.takename = TamaData.name
+        vc.takeImage = TamaData.imageName
+        vc.takecontent = "저는 \(TamaData.name)입니당 키는 100km 몸무게는 150톤이에용 성격은 화끈하고 날라다닙니당~! 열심히 잘 먹고 잘 클 자신은 있답니당 방실방실!"
+        vc.
+           
         }
     
-    }
+}
     
     
     
   
-}
+

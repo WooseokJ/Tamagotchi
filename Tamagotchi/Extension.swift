@@ -8,10 +8,10 @@
 import UIKit
 
 
-extension UIButton{
-    func DetailDesign(){
-        self.layer.borderWidth = 1
-    }
-    
+class NameClass{
+    static var tamaName = "대장"
+    static var firstTitle = "다마고치 선택하기"
+    static var firstButton = "시작하기"
+
     
 }
