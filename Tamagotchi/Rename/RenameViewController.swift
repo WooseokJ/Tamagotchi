@@ -10,7 +10,7 @@ class RenameViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
         renameTextField.backgroundColor = ColorName.backgroundcolor
         navigationItem.titleView?.tintColor = ColorName.fontcolor
-        navigationItem.rightBarButtonItem?.tintColor = ColorName.fontcolor
+        renameTextField.placeholder = "이름입력해주세요"
     }
     
     @objc func saveButtonClicked(){
@@ -32,7 +32,7 @@ class RenameViewController: UIViewController {
     
     @IBAction func ChangedTextField(_ sender: UITextField) {
         renameTextField.text = sender.text
-
+        
     }
     
 

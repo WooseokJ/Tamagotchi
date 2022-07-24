@@ -85,14 +85,7 @@ class MainViewController: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
-        navigationItem.title = "\(tamaname)님의 다마고치"
-        
-        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ"]
-        let selectContent = Int.random(in: 0...Randomcontent.count-1)
-        MainContentLabel.text = Randomcontent[selectContent]
-        
-        
+        RandomText()
     }
     
     
@@ -131,7 +124,6 @@ class MainViewController: UIViewController {
         MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainDrinkingTextField.text = ""
         RandomText()
-    
     }
     
     // 물주기 텍스트필드
@@ -191,6 +183,9 @@ class MainViewController: UIViewController {
     }
     
     func RandomText(){
+        let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
+        navigationItem.title = "\(tamaname)님의 다마고치"
+        
         let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아?","\(tamaname) 님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ"]
         let selectContent = Int.random(in: 0...Randomcontent.count-1)
         MainContentLabel.text = Randomcontent[selectContent]
