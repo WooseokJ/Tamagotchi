@@ -8,7 +8,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 //        window?.makeKeyAndVisible()
-//        guard let _ = (scene as? UIWindowScene) else { return }
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key.description)
+        }
+            guard let _ = (scene as? UIWindowScene) else { return }
+
         
     }
 

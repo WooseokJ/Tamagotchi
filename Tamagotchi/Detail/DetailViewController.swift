@@ -17,23 +17,23 @@ class DetailViewController: UIViewController {
     var takecontent : String?
     var imageNum : Int?
     
-    
+    var level : Double?
+    var eatcnt : Double?
+    var drinkcnt : Double?
+    var backimagenum : Int?
     
     @IBOutlet weak var detailConfirmButton: UIButton!
     @IBOutlet weak var detailCancelButton: UIButton!
-    
-  
     @IBOutlet weak var detailCenterView: UIView!
     @IBOutlet weak var bottomView: UIView!
-    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var detailContentLabel: UILabel!
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailImageView: UIImageView!
     
-    var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
-    var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
+
+    let buttonname = UserDefaults.standard.value(forKey: "startbutton") as! String
     
     var detailTamaData = TamaInfo().TamaAttribute
     override func viewDidLoad() {
@@ -42,22 +42,23 @@ class DetailViewController: UIViewController {
         bottomView.backgroundColor = .systemGray3
         detailCenterView.backgroundColor = .systemGray3
         
-        detailView.backgroundColor = backgroundcolor
+        detailView.backgroundColor = ColorName.backgroundcolor
         detailView.layer.borderWidth = 1
         detailView.layer.cornerRadius = 4
         
         detailNameLabel.textAlignment = .center
-        detailNameLabel.textColor = fontcolor
+        detailNameLabel.textColor = ColorName.fontcolor
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
 
         detailCancelButton.setTitle("취소", for: .normal)
-        detailCancelButton.setTitleColor(fontcolor, for: .normal)
-
-        detailConfirmButton.setTitle(NameClass.firstButton, for: .normal)
-        detailConfirmButton.setTitleColor(fontcolor, for: .normal)
+        detailCancelButton.setTitleColor(ColorName.fontcolor, for: .normal)
+        
+        
+        detailConfirmButton.setTitle(buttonname, for: .normal)
+        detailConfirmButton.setTitleColor(ColorName.fontcolor, for: .normal)
 
         detailCancelButton.backgroundColor = .systemGray5
-        backgroundView.backgroundColor = backgroundcolor
+        backgroundView.backgroundColor = ColorName.backgroundcolor
 
         detailNameLabel.text = takename
         detailImageView.image = UIImage(named: takeImage ?? "noImage")
@@ -86,6 +87,11 @@ class DetailViewController: UIViewController {
         vc.mainCenterLabel = takename
         
         vc.selectNumber = imageNum
+        
+        UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
+        UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
+        UserDefaults.standard.set(level, forKey: "level")
+        UserDefaults.standard.set(backimagenum, forKey: "backimagenum")
         
         self.present(nav,animated: false)
 

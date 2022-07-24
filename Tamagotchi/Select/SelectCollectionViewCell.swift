@@ -9,22 +9,20 @@ class SelectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var selectLabelback: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectImage: UIImageView!
-    var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
-    var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
-    
+  
     func DesignTama(data:Tama){
         nameLabel.font = .systemFont(ofSize: 13)
         nameLabel.text = data.name
-        nameLabel.textColor = fontcolor
+        nameLabel.textColor = ColorName.fontcolor
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
    
-        selectLabelback.backgroundColor = backgroundcolor
+        selectLabelback.backgroundColor = ColorName.backgroundcolor
         selectLabelback.layer.borderWidth = 1
         selectLabelback.layer.cornerRadius = 4
         
         selectImage.image = UIImage(named: data.imageName)
-        selectImage.backgroundColor = backgroundcolor
+        selectImage.backgroundColor = ColorName.backgroundcolor
         selectImage.layer.cornerRadius = selectImage.frame.height / 2
         selectImage.layer.borderWidth = 2
         selectImage.clipsToBounds = true

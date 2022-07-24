@@ -8,18 +8,16 @@
 import UIKit
 
 class RenameViewController: UIViewController {
-    var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
     @IBOutlet weak var renameTextField: UITextField!
-    var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
-    
+    let tamaName = UserDefaults.standard.value(forKey: "tamaname") as! String
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = backgroundcolor
-        navigationItem.title = "\(NameClass.tamaName)님 이름 정하기"
+        view.backgroundColor = ColorName.backgroundcolor
+        navigationItem.title = "\(tamaName)님 이름 정하기"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
-        navigationItem.titleView?.tintColor = fontcolor
+        navigationItem.titleView?.tintColor = ColorName.fontcolor
         
-        renameTextField.backgroundColor = backgroundcolor
+        renameTextField.backgroundColor = ColorName.backgroundcolor
         
     }
     
@@ -32,7 +30,10 @@ class RenameViewController: UIViewController {
             present(alert, animated: true)
             return
         }
-        NameClass.tamaName = renameTextField.text!
+        
+        UserDefaults.standard.set(renameTextField.text!, forKey: "tamaname")
+                
+        
         self.navigationController?.popViewController(animated: true)
     }
         

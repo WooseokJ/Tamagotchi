@@ -82,16 +82,16 @@
 		E1C6CB00288A708300FF8C32 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6CB0F288A708700FF8C32 /* Info.plist */,
 				E18CF9A9288AAC1E005C99E7 /* Extension.swift */,
 				E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */,
 				E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */,
-				E1C6CB20288A760B00FF8C32 /* Detail */,
-				E1C6CB1F288A75C900FF8C32 /* Select */,
 				E1C6CB1E288A75BF00FF8C32 /* Rename */,
 				E1C6CB1D288A759900FF8C32 /* Setting */,
-				E1C6CB1C288A756500FF8C32 /* Basic */,
 				E1C6CB1B288A755800FF8C32 /* Main */,
-				E1C6CB0F288A708700FF8C32 /* Info.plist */,
+				E1C6CB20288A760B00FF8C32 /* Detail */,
+				E1C6CB1F288A75C900FF8C32 /* Select */,
+				E1C6CB1C288A756500FF8C32 /* Basic */,
 			);
 			path = Tamagotchi;
 			sourceTree = "<group>";
