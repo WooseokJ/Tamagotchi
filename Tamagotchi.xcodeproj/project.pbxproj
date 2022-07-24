@@ -33,6 +33,7 @@
 		E18CF9A9288AAC1E005C99E7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamaInfo.swift; sourceTree = "<group>"; };
 		E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTamagotchi.swift; sourceTree = "<group>"; };
+		E1B8A083288DD2D4002D2E49 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E1C6CAFE288A708300FF8C32 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C6CB01288A708300FF8C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		E1C6CAF5288A708300FF8C32 = {
 			isa = PBXGroup;
 			children = (
+				E1B8A083288DD2D4002D2E49 /* README.md */,
 				E1C6CB00288A708300FF8C32 /* Tamagotchi */,
 				E1C6CAFF288A708300FF8C32 /* Products */,
 			);
