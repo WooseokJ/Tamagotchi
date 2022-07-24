@@ -1,10 +1,3 @@
-//
-//  RenameViewController.swift
-//  Tamagotchi
-//
-//  Created by useok on 2022/07/22.
-//
-
 import UIKit
 
 class RenameViewController: UIViewController {
@@ -15,10 +8,11 @@ class RenameViewController: UIViewController {
         view.backgroundColor = ColorName.backgroundcolor
         navigationItem.title = "\(tamaName)님 이름 정하기"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
-        navigationItem.titleView?.tintColor = ColorName.fontcolor
-        
         renameTextField.backgroundColor = ColorName.backgroundcolor
-        
+        navigationItem.titleView?.tintColor = ColorName.fontcolor
+        navigationItem.rightBarButtonItem?.tintColor = ColorName.fontcolor
+
+
     }
     
     @objc func saveButtonClicked(){

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class DetailViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class DetailViewController: UIViewController {
     var eatcnt : Double?
     var drinkcnt : Double?
     var backimagenum : Int?
+
     
     @IBOutlet weak var detailConfirmButton: UIButton!
     @IBOutlet weak var detailCancelButton: UIButton!
@@ -92,6 +94,9 @@ class DetailViewController: UIViewController {
         UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
         UserDefaults.standard.set(level, forKey: "level")
         UserDefaults.standard.set(backimagenum, forKey: "backimagenum")
+        
+      
+        
         
         self.present(nav,animated: false)
 

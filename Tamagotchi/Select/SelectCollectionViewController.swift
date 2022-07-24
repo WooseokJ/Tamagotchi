@@ -37,6 +37,7 @@ class SelectCollectionViewController: UICollectionViewController {
             UserDefaults.standard.set(0.0, forKey: "eatcnt")
             UserDefaults.standard.set(0.0, forKey: "drinkcnt")
             UserDefaults.standard.set(1, forKey: "backimagenum")
+            
         }
         let navTitle = UserDefaults.standard.value(forKey: "tamachange") as! String
         navigationItem.title = navTitle
@@ -70,6 +71,11 @@ class SelectCollectionViewController: UICollectionViewController {
         vc.takecontent = "저는 \(TamaData.name)입니당 키는 100km 몸무게는 150톤이에용 성격은 화끈하고 날라다닙니당~! 열심히 잘 먹고 잘 클 자신은 있답니당 방실방실!"
         
         vc.imageNum = indexPath.row + 1
+        
+        guard TamaInfo().TamaAttribute[indexPath.item].name != "준비중이에요" else{
+            view.makeToast("준비중입니다.")
+            return
+        }
         present(nav, animated: true, completion: nil)
         
         

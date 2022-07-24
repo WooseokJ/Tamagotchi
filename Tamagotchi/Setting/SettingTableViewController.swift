@@ -19,6 +19,7 @@ class SettingTableViewController: UITableViewController {
     let left = ["pencil","moon.fill","arrow.clockwise"]
     let center = ["내이름 설정하기","다마고치 변경하기","데이터 초기화"]
     let right = ["고래밥","",""]
+    let buttonname = UserDefaults.standard.value(forKey: "tamaname") as! String
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +28,7 @@ class SettingTableViewController: UITableViewController {
         navigationItem.title = "설정"
         navigationItem.backButtonTitle = " "
         navigationItem.titleView?.tintColor = ColorName.fontcolor
+
     }
 
   
@@ -45,6 +47,7 @@ class SettingTableViewController: UITableViewController {
         cell.detailTextLabel?.text = right[indexPath.row]
         cell.detailTextLabel?.textColor = .systemGray
         cell.backgroundColor = ColorName.backgroundcolor
+        
         return cell
    
     }

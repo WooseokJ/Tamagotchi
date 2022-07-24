@@ -66,8 +66,4 @@ struct TamaInfo {
         Tama(name: "반짝빤짝 다마고치", imageName: "3-9"),
     ]
     
-    
-
-
-    
 }

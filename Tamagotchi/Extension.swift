@@ -14,4 +14,11 @@ class ColorName{
     static var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
 }
 
+
+extension UIView{
+    func DesignView{
+        
+    }
+}
+
 //static 변수는 초기화할떄 초기화가안됨.

@@ -12,8 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UserDefaults.standard.removeObject(forKey: key.description)
         }
             guard let _ = (scene as? UIWindowScene) else { return }
-
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
