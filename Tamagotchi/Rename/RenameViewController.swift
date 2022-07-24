@@ -11,8 +11,6 @@ class RenameViewController: UIViewController {
         renameTextField.backgroundColor = ColorName.backgroundcolor
         navigationItem.titleView?.tintColor = ColorName.fontcolor
         navigationItem.rightBarButtonItem?.tintColor = ColorName.fontcolor
-
-
     }
     
     @objc func saveButtonClicked(){

@@ -1,18 +1,21 @@
 import UIKit
 
-//enum Setting : Int,CaseIterable{
-//    case mynameSetting, tamaChanged, dataFormat
-//    var rowTitle : [String]{
-//        switch self {
-//        case .mynameSetting:
-//            return ["pencil","내이름 설정하기","고래밥"]
-//        case .tamaChanged:
-//            return ["moon.fill","다마고치 변경하기",""]
-//        case .dataFormat:
-//            return ["arrow.clockwise","데이터 초기화",""]
-//        }
-//    }
-//}
+enum Setting : Int,CaseIterable{
+    case mynameSetting, tamaChanged, dataFormat
+    var rowTitle : [String]{
+        switch self {
+        case .mynameSetting:
+            return ["pencil","내이름 설정하기","고래밥"]
+        case .tamaChanged:
+            return ["moon.fill","다마고치 변경하기",""]
+        case .dataFormat:
+            return ["arrow.clockwise","데이터 초기화",""]
+        }
+    }
+    
+    
+    
+}
 
 class SettingTableViewController: UITableViewController {
     
@@ -21,20 +24,16 @@ class SettingTableViewController: UITableViewController {
     let right = ["고래밥","",""]
     
     override func viewWillAppear(_ animated: Bool) {
-     
         tableView.reloadData()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = ColorName.backgroundcolor
         tableView.rowHeight = 60
         navigationItem.title = "설정"
         navigationItem.backButtonTitle = " "
         navigationItem.titleView?.tintColor = ColorName.fontcolor
-
     }
   
 
@@ -50,23 +49,21 @@ class SettingTableViewController: UITableViewController {
 
         cell.textLabel?.text = center[indexPath.row]
         cell.imageView?.image = UIImage(systemName: left[indexPath.row])
-        cell.imageView?.tintColor = ColorName.fontcolor
         cell.detailTextLabel?.text = right[indexPath.row]
+        
         cell.detailTextLabel?.textColor = .systemGray
         cell.backgroundColor = ColorName.backgroundcolor
-        
+        cell.imageView?.tintColor = ColorName.fontcolor
+
         return cell
    
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        
         switch indexPath.row{
         case 0 :
             let sb = UIStoryboard(name:"Grow",bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "RenameViewController") as! RenameViewController
-            
             self.navigationController?.pushViewController(vc, animated: true)
             navigationItem.backButtonTitle = "설정"
             navigationItem.titleView?.tintColor = ColorName.fontcolor
@@ -83,7 +80,7 @@ class SettingTableViewController: UITableViewController {
             let alertConfirm = UIAlertAction(title: "웅", style: .default){ (action) in
                 refreshClicked()
             }
-            
+
             alert.addAction(alertCancel)
             alert.addAction(alertConfirm)
             

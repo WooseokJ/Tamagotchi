@@ -16,9 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var MainImageView: UIImageView!
     @IBOutlet weak var MainEatingTextField: UITextField!
     @IBOutlet weak var MainDrinkingTextField: UITextField!
-    
     @IBOutlet weak var MainLevelLabel: UILabel!
-    
     @IBOutlet weak var MainNameImage: UIView!
     @IBOutlet weak var MainTamaName: UILabel!
     @IBOutlet weak var MainDrinking: UIButton!
@@ -27,14 +25,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var topImageView: UIView!
     
     
-    //1. 값설정
     var mainCenterLabel : String?
-    var mainCenterImage : String?
     var selectNumber : Int?
-    
-    var textEatingContent : Int = 0
-    var TamaData = TamaInfo().TamaAttribute
-    
+        
     var tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
     var level = UserDefaults.standard.value(forKey: "level") as! Double
     var eatcnt = UserDefaults.standard.value(forKey: "eatcnt") as! Double
@@ -57,49 +50,54 @@ class MainViewController: UIViewController {
         navigationItem.backButtonTitle = " "
         
         MainTopimage.image = UIImage(named: "bubble")
-
         MainImageView.image = UIImage(named: "\(selectNumber!)-\(backimagenum)")
-
-        MainTamaName.text = mainCenterLabel
         
-        MainContentLabel.text = "\(tamaname)님 오늘 날씨가 좋네요."
-        MainContentLabel.textAlignment = .center
+        MainContentLabel.MainContentLabelDesign(tamaname)
+        
         MainLevelLabel.text = "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainLevelLabel.textAlignment = .center
         MainNameImage.backgroundColor = ColorName.backgroundcolor
+        
         MainEating.tintColor = ColorName.fontcolor
         MainDrinking.tintColor = ColorName.fontcolor
         
+        MainTamaName.text = mainCenterLabel
         MainTamaName.layer.cornerRadius = 2
         MainTamaName.backgroundColor = ColorName.backgroundcolor
+        
         MainDrinking.setTitle("물주기", for: .normal)
         MainDrinking.setImage(UIImage(systemName: "drop.circle"), for: .normal)
+        
         MainEating.setTitle("밥먹기", for: .normal)
         MainEating.setImage(UIImage(systemName: "leaf.circle"), for: .normal)
         
-        MainEatingTextField.backgroundColor = ColorName.backgroundcolor
         MainDrinkingTextField.backgroundColor = ColorName.backgroundcolor
         MainDrinkingTextField.placeholder = "물주세용"
         MainDrinkingTextField.textAlignment = .center
+        MainDrinkingTextField.keyboardType = .numberPad
+
         MainEatingTextField.placeholder = "밥주세용"
         MainEatingTextField.textAlignment = .center
-        topImageView.backgroundColor = ColorName.backgroundcolor
-        
+        MainEatingTextField.backgroundColor = ColorName.backgroundcolor
         MainEatingTextField.keyboardType = .numberPad
-        MainDrinkingTextField.keyboardType = .numberPad
+        
+        topImageView.backgroundColor = ColorName.backgroundcolor
+
     }
     override func viewWillAppear(_ animated: Bool) {
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
         navigationItem.title = "\(tamaname)님의 다마고치"
-        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아?","\(tamaname) 님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ"]
+        
+        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ"]
         let selectContent = Int.random(in: 0...Randomcontent.count-1)
         MainContentLabel.text = Randomcontent[selectContent]
+        
+        
     }
     
     
     // 사람 버튼누르면
-    @objc
-    func SettingButtonClicked(){
+    @objc func SettingButtonClicked(){
         let sb = UIStoryboard(name:"Grow",bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
         UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
@@ -107,7 +105,6 @@ class MainViewController: UIViewController {
         UserDefaults.standard.set(level, forKey: "level")
         UserDefaults.standard.set(backimagenum, forKey: "backimagenum")
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     // 밥주기 버튼
