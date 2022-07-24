@@ -19,7 +19,13 @@ class SettingTableViewController: UITableViewController {
     let left = ["pencil","moon.fill","arrow.clockwise"]
     let center = ["내이름 설정하기","다마고치 변경하기","데이터 초기화"]
     let right = ["고래밥","",""]
-    let buttonname = UserDefaults.standard.value(forKey: "tamaname") as! String
+    
+    override func viewWillAppear(_ animated: Bool) {
+     
+        tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +36,7 @@ class SettingTableViewController: UITableViewController {
         navigationItem.titleView?.tintColor = ColorName.fontcolor
 
     }
+  
 
   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

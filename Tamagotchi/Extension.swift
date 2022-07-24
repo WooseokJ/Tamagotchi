@@ -16,9 +16,30 @@ class ColorName{
 
 
 extension UIView{
-    func DesignView{
-        
+    func DetailCenterDesignView(){
+        self.backgroundColor = .systemGray3
+    }
+    func DetailbackDesignView(){
+        self.backgroundColor = ColorName.backgroundcolor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 4
+    }
+
+}
+
+extension UILabel{
+    func DetailNameDesign(){
+        self.textAlignment = .center
+        self.textColor = ColorName.fontcolor
+    
     }
 }
 
+extension UIButton{
+    func DetailCencelDesign(_ titlename:String){
+        self.setTitleColor(ColorName.fontcolor, for: .normal)
+        self.setTitle(titlename, for: .normal)
+        self.backgroundColor = .systemGray5
+    }
+}
 //static 변수는 초기화할떄 초기화가안됨.
