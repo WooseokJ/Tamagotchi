@@ -37,6 +37,7 @@ extension UILabel{
     func MainContentLabelDesign(_ tamaname:String){
         self.text = "\(tamaname)님 오늘 날씨가 좋네요."
         self.textAlignment = .center
+        self.numberOfLines = 0
     }
 
     

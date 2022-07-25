@@ -40,10 +40,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-aF-58Z">
-                                            <rect key="frame" x="15" y="122" width="112" height="51"/>
+                                            <rect key="frame" x="10" y="122" width="122" height="51"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-UF-KgO">
-                                                    <rect key="frame" x="5" y="3" width="102" height="45"/>
+                                                    <rect key="frame" x="5" y="3" width="111" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                                 <constraint firstItem="KFk-UF-KgO" firstAttribute="leading" secondItem="bqQ-aF-58Z" secondAttribute="leading" constant="5" id="1ei-g2-j1Y"/>
                                                 <constraint firstAttribute="bottom" secondItem="KFk-UF-KgO" secondAttribute="bottom" constant="3" id="242-Tr-h15"/>
                                                 <constraint firstItem="KFk-UF-KgO" firstAttribute="top" secondItem="bqQ-aF-58Z" secondAttribute="top" constant="3" id="EhB-Pn-rV7"/>
-                                                <constraint firstAttribute="trailing" secondItem="KFk-UF-KgO" secondAttribute="trailing" constant="5" id="giE-so-Y3q"/>
+                                                <constraint firstAttribute="trailing" secondItem="KFk-UF-KgO" secondAttribute="trailing" constant="6" id="giE-so-Y3q"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -64,8 +64,8 @@
                                         <constraint firstAttribute="bottom" secondItem="bqQ-aF-58Z" secondAttribute="bottom" constant="10" id="N3R-9T-LW9"/>
                                         <constraint firstAttribute="trailing" secondItem="lfo-y2-d1C" secondAttribute="trailing" constant="20" id="g2E-8r-ele"/>
                                         <constraint firstItem="bqQ-aF-58Z" firstAttribute="top" secondItem="lfo-y2-d1C" secondAttribute="bottom" constant="10" id="k8B-gh-p5v"/>
-                                        <constraint firstAttribute="trailing" secondItem="bqQ-aF-58Z" secondAttribute="trailing" constant="15" id="mpB-sv-so9"/>
-                                        <constraint firstItem="bqQ-aF-58Z" firstAttribute="leading" secondItem="X9b-kf-0fR" secondAttribute="leading" constant="15" id="ujg-zp-lO3"/>
+                                        <constraint firstAttribute="trailing" secondItem="bqQ-aF-58Z" secondAttribute="trailing" constant="10" id="mpB-sv-so9"/>
+                                        <constraint firstItem="bqQ-aF-58Z" firstAttribute="leading" secondItem="X9b-kf-0fR" secondAttribute="leading" constant="10" id="ujg-zp-lO3"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="142" height="183"/>
@@ -120,10 +120,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-aD-WO0">
-                                        <rect key="frame" x="100" y="211" width="134" height="30"/>
+                                        <rect key="frame" x="80" y="211" width="174" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmh-Zd-5bV">
-                                                <rect key="frame" x="0.0" y="0.0" width="134" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -166,8 +166,8 @@
                                     <constraint firstItem="Y0I-aD-WO0" firstAttribute="top" secondItem="XtY-jT-IdN" secondAttribute="bottom" constant="20" id="4Zh-Gt-4Vm"/>
                                     <constraint firstItem="yfX-3L-dXN" firstAttribute="leading" secondItem="xMA-SF-b2L" secondAttribute="leading" id="5I0-50-fAG"/>
                                     <constraint firstAttribute="trailing" secondItem="VTy-Fw-nN3" secondAttribute="trailing" constant="40" id="61h-s7-h2Q"/>
-                                    <constraint firstItem="Y0I-aD-WO0" firstAttribute="leading" secondItem="xMA-SF-b2L" secondAttribute="leading" constant="100" id="Be1-GN-ivZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y0I-aD-WO0" secondAttribute="trailing" constant="100" id="D7u-mM-Tcj"/>
+                                    <constraint firstItem="Y0I-aD-WO0" firstAttribute="leading" secondItem="xMA-SF-b2L" secondAttribute="leading" constant="80" id="Be1-GN-ivZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y0I-aD-WO0" secondAttribute="trailing" constant="80" id="D7u-mM-Tcj"/>
                                     <constraint firstItem="Y0I-aD-WO0" firstAttribute="centerX" secondItem="xMA-SF-b2L" secondAttribute="centerX" id="SgS-q0-OnD"/>
                                     <constraint firstItem="cQe-ra-eRT" firstAttribute="bottom" secondItem="VTy-Fw-nN3" secondAttribute="bottom" constant="67" id="TdN-jL-p60"/>
                                     <constraint firstAttribute="trailing" secondItem="nVm-m9-vKF" secondAttribute="trailing" id="TuR-zv-hBH"/>
