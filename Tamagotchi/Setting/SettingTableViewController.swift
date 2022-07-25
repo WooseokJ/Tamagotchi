@@ -31,6 +31,7 @@ class SettingTableViewController: UITableViewController {
             return
         }
         UserDefaults.standard.set(right,forKey: "right")
+        print(#function)
     }
     
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class SettingTableViewController: UITableViewController {
         navigationItem.title = "설정"
         navigationItem.backButtonTitle = " "
         navigationItem.titleView?.tintColor = ColorName.fontcolor
+        navigationController?.navigationBar.tintColor = ColorName.fontcolor
     }
   
 

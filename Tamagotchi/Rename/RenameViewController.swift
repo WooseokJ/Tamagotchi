@@ -11,10 +11,11 @@ class RenameViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
         renameTextField.backgroundColor = ColorName.backgroundcolor
         navigationItem.titleView?.tintColor = ColorName.fontcolor
-        renameTextField.placeholder = "이름입력해주세요"
+        renameTextField.placeholder = "\(tamaName)님 수정할 이름을 입력해주세요"
+        navigationController?.navigationBar.tintColor = ColorName.fontcolor
     }
     
-    @objc func saveButtonClicked(){
+    @objc func saveButtonClicked() {
         // 다마고치 바뀌는부분
         guard !renameTextField.text!.isEmpty else{
             let alert = UIAlertController(title: "알림", message: "변경할 이름을 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
