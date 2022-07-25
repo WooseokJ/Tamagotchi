@@ -19,19 +19,16 @@ class DetailViewController: UIViewController {
     var eatcnt : Double?
     var drinkcnt : Double?
     var backimagenum : Int?
-
-    @IBOutlet weak var detailConfirmButton: UIButton!
-    @IBOutlet weak var detailCancelButton: UIButton!
-    
-    @IBOutlet weak var detailCenterView: UIView!
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var detailView: UIView!
-    
-    @IBOutlet weak var detailContentLabel: UILabel!
-    @IBOutlet weak var detailNameLabel: UILabel!
-  
-    @IBOutlet weak var detailImageView: UIImageView!
+ 
+    @IBOutlet weak var detailConfirmButton: UIButton! //시작하기
+    @IBOutlet weak var detailCancelButton: UIButton! // 취소
+    @IBOutlet weak var detailCenterView: UIView! //중간 검은선
+    @IBOutlet weak var bottomView: UIView! // 하단 검은선
+    @IBOutlet weak var backgroundView: UIView! // 전체 백그라운드
+    @IBOutlet weak var detailView: UIView! // 타마고치 이름 백그라운드
+    @IBOutlet weak var detailContentLabel: UILabel! // 타마고치 설명
+    @IBOutlet weak var detailNameLabel: UILabel! // 타마고치이름
+    @IBOutlet weak var detailImageView: UIImageView! // 타마고치 이미지
     
 
     let buttonname = UserDefaults.standard.value(forKey: "startbutton") as! String
@@ -39,6 +36,7 @@ class DetailViewController: UIViewController {
     var detailTamaData = TamaInfo().TamaAttribute
     override func viewDidLoad() {
         super.viewDidLoad()
+        //디자인
         bottomView.DetailCenterDesignView()
         detailCenterView.DetailCenterDesignView()
         detailView.DetailbackDesignView()
@@ -46,11 +44,10 @@ class DetailViewController: UIViewController {
         detailCancelButton.DetailCencelDesign("취소")
         detailConfirmButton.DetailCorfirmDesign(buttonname)
         detailContentLabel.detailContentLabelDesign(takecontent ?? " ")
-
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         backgroundView.backgroundColor = ColorName.backgroundcolor
-        
         detailNameLabel.text = takename
+        
         detailImageView.image = UIImage(named: takeImage ?? "noImage")
         guard takeImage != "noImage" else{
             return detailContentLabel.text = "준비중입니다."
@@ -58,12 +55,12 @@ class DetailViewController: UIViewController {
     }
     
     
-    
+    //취소버튼
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-
+    // 확인버튼
     @IBAction func ConfirmButton(_ sender: UIButton) {
         let next = UIStoryboard(name: "Grow", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController

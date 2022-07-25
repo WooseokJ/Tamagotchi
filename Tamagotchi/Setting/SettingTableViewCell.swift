@@ -11,7 +11,6 @@ class SettingTableViewCell: UITableViewCell {
  
     @IBOutlet weak var SettingButton: UIButton!
     @IBOutlet weak var SettingLabel: UILabel!
-    
     @IBOutlet weak var SettingImage: UIImageView!
 
 }

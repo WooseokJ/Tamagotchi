@@ -9,7 +9,7 @@ class SelectCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        //컬렉션뷰의 셀크기,셀사이 간격등 설명
+        // 컬렉션뷰 레이아웃 설정
         let layout = UICollectionViewFlowLayout()
         let spacing : CGFloat = 0
         let layoutwidth = UIScreen.main.bounds.width - (spacing * 4)
@@ -18,17 +18,17 @@ class SelectCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
-        
         collectionView.collectionViewLayout = layout
         
+        // 네비게이션뷰
         navigationItem.titleView?.tintColor = ColorName.fontcolor
-        
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
         navigationItem.standardAppearance = navigationBarAppearance
         navigationItem.scrollEdgeAppearance?.backgroundColor =  ColorName.backgroundcolor
         
+        // 데이터 저장
         if UserDefaults.standard.string(forKey: "tamaname") == nil{
             UserDefaults.standard.set("대장", forKey: "tamaname")
             UserDefaults.standard.set("시작하기", forKey: "startbutton")
@@ -45,6 +45,7 @@ class SelectCollectionViewController: UICollectionViewController {
         navigationItem.title = navTitle
     }
 
+    // 컬렉션뷰 item 갯수 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TamaInfo().TamaAttribute.count
     }
