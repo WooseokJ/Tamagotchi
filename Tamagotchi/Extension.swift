@@ -2,7 +2,7 @@ import UIKit
 
 
 class NameClass{
-    static var growImageNumber = 1
+    static var rename : String?
 }
 
 class ColorName{

@@ -1,6 +1,7 @@
 import UIKit
 
 class RenameViewController: UIViewController {
+    
     @IBOutlet weak var renameTextField: UITextField!
     let tamaName = UserDefaults.standard.value(forKey: "tamaname") as! String
     override func viewDidLoad() {
@@ -24,7 +25,9 @@ class RenameViewController: UIViewController {
         }
         
         UserDefaults.standard.set(renameTextField.text!, forKey: "tamaname")
-                
+        NameClass.rename = renameTextField.text!
+        let right : [String] = [NameClass.rename!,"",""]
+        UserDefaults.standard.set(right,forKey: "right")
         
         self.navigationController?.popViewController(animated: true)
     }

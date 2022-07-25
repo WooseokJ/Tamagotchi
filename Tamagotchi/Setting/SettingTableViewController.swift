@@ -21,10 +21,16 @@ class SettingTableViewController: UITableViewController {
     
     let left = ["pencil","moon.fill","arrow.clockwise"]
     let center = ["내이름 설정하기","다마고치 변경하기","데이터 초기화"]
-    let right = ["고래밥","",""]
+    let right = UserDefaults.standard.value(forKey: "right") as! [String]
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        guard NameClass.rename == nil else{
+            let right : [String] = [NameClass.rename!,"",""]
+            UserDefaults.standard.set(right,forKey: "right")
+            return
+        }
+        UserDefaults.standard.set(right,forKey: "right")
     }
     
     override func viewDidLoad() {
@@ -43,14 +49,15 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let right = UserDefaults.standard.value(forKey: "right") as! [String]
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as! SettingTableViewCell
         cell.accessoryType = .disclosureIndicator
         cell.focusStyle = .custom
 
         cell.textLabel?.text = center[indexPath.row]
         cell.imageView?.image = UIImage(systemName: left[indexPath.row])
-        cell.detailTextLabel?.text = right[indexPath.row]
-        
+        cell.SettingLabel.text = right[indexPath.row]
+        cell.SettingLabel.textColor = ColorName.fontcolor
         cell.detailTextLabel?.textColor = .systemGray
         cell.backgroundColor = ColorName.backgroundcolor
         cell.imageView?.tintColor = ColorName.fontcolor

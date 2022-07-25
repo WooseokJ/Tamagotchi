@@ -37,6 +37,8 @@ class SelectCollectionViewController: UICollectionViewController {
             UserDefaults.standard.set(0.0, forKey: "eatcnt")
             UserDefaults.standard.set(0.0, forKey: "drinkcnt")
             UserDefaults.standard.set(1, forKey: "backimagenum")
+            let right = ["고래밥","",""]
+            UserDefaults.standard.set(right,forKey: "right")
             
         }
         let navTitle = UserDefaults.standard.value(forKey: "tamachange") as! String

@@ -11,7 +11,6 @@
 		E18CF9AC288AB1A1005C99E7 /* TamaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */; };
 		E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */; };
 		E18CF9B9288AB5A3005C99E7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9B8288AB5A3005C99E7 /* Kingfisher */; };
-		E18CF9BC288AB5D0005C99E7 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */; };
 		E1B8A082288D90E7002D2E49 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E1B8A081288D90E7002D2E49 /* Toast */; };
 		E1C6CB02288A708300FF8C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB01288A708300FF8C32 /* AppDelegate.swift */; };
 		E1C6CB04288A708300FF8C32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6CB03288A708300FF8C32 /* SceneDelegate.swift */; };
@@ -59,7 +58,6 @@
 			files = (
 				E1B8A082288D90E7002D2E49 /* Toast in Frameworks */,
 				E18CF9B9288AB5A3005C99E7 /* Kingfisher in Frameworks */,
-				E18CF9BC288AB5D0005C99E7 /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +172,6 @@
 			name = Tamagotchi;
 			packageProductDependencies = (
 				E18CF9B8288AB5A3005C99E7 /* Kingfisher */,
-				E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */,
 				E1B8A081288D90E7002D2E49 /* Toast */,
 			);
 			productName = Tamagotchi;
@@ -207,7 +204,6 @@
 			mainGroup = E1C6CAF5288A708300FF8C32;
 			packageReferences = (
 				E18CF9B7288AB5A3005C99E7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				E1B8A080288D90E7002D2E49 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = E1C6CAFF288A708300FF8C32 /* Products */;
@@ -484,14 +480,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		E1B8A080288D90E7002D2E49 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -507,11 +495,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E18CF9B7288AB5A3005C99E7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		E18CF9BB288AB5D0005C99E7 /* TextFieldEffects */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E18CF9BA288AB5D0005C99E7 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
-			productName = TextFieldEffects;
 		};
 		E1B8A081288D90E7002D2E49 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
