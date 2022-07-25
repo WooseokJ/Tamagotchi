@@ -21,9 +21,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var MainTamaName: UILabel!
     @IBOutlet weak var MainDrinking: UIButton!
     @IBOutlet weak var MainEating: UIButton!
-    
+
+    @IBOutlet weak var MainDrinkLine: UIView!
     @IBOutlet weak var topImageView: UIView!
     
+    @IBOutlet weak var MainEatLine: UIView!
+    
+    @IBOutlet weak var TextButtonback2: UIView!
+    
+    @IBOutlet weak var TextButtonback1: UIView!
     
     var mainCenterLabel : String?
     var selectNumber : Int?
@@ -81,8 +87,16 @@ class MainViewController: UIViewController {
         MainEatingTextField.backgroundColor = ColorName.backgroundcolor
         MainEatingTextField.keyboardType = .numberPad
         
+        MainEatingTextField.borderStyle = .none
+        MainDrinkingTextField.borderStyle = .none
+        
         topImageView.backgroundColor = ColorName.backgroundcolor
 
+        TextButtonback1.backgroundColor = ColorName.backgroundcolor
+        TextButtonback2.backgroundColor = ColorName.backgroundcolor
+    MainDrinkLine.backgroundColor = .black
+        MainEatLine.backgroundColor = .black
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         RandomText()
@@ -139,11 +153,11 @@ class MainViewController: UIViewController {
         //이거하면 레벨계산은 잘됨.
         for i in stride(from: 2, through: 9, by: 1){
             switch Int(levelChagned) {
-                    case 0..<20  :
+                    case 0..<19  :
                         level = 1
                         backimagenum=1
                         imageShow()
-                    case i*10..<(i+1)*10 :
+                    case i*10..<((i+1)*10) - 1 :
                         level = Double(i)
                         backimagenum=Int(i)
                         imageShow()
@@ -155,14 +169,18 @@ class MainViewController: UIViewController {
                     }
             }
     }
-    
+    //MARK: 랜덤텍스트추출
+    /// - Parameters:
+    /// - tamaname : 타마이름
+    ///
     func RandomText(){
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
         navigationItem.title = "\(tamaname)님의 다마고치"
-        
-        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아?","\(tamaname) 님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ"]
+        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아요?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ","\(tamaname)님 오전10시까지인줄알았어요"]
         let selectContent = Int.random(in: 0...Randomcontent.count-1)
         MainContentLabel.text = Randomcontent[selectContent]
+//        MainContentLabel.text = Randomcontent.randomElement()
+        
     }
     @IBAction func TapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)

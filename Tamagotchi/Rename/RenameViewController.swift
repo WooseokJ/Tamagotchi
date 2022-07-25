@@ -2,6 +2,7 @@ import UIKit
 
 class RenameViewController: UIViewController {
     
+    @IBOutlet weak var Textback: UIView!
     @IBOutlet weak var renameTextField: UITextField!
     let tamaName = UserDefaults.standard.value(forKey: "tamaname") as! String
     override func viewDidLoad() {
@@ -13,6 +14,9 @@ class RenameViewController: UIViewController {
         navigationItem.titleView?.tintColor = ColorName.fontcolor
         renameTextField.placeholder = "\(tamaName)님 수정할 이름을 입력해주세요"
         navigationController?.navigationBar.tintColor = ColorName.fontcolor
+        renameTextField.borderStyle = .none
+        Textback.backgroundColor = .black
+        
     }
     
     @objc func saveButtonClicked() {
