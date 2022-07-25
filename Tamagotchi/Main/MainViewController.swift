@@ -137,48 +137,22 @@ class MainViewController: UIViewController {
     func selectLavel(){
         let levelChagned : Double = Double((eatcnt/5)) + Double((drinkcnt / 2))
         //이거하면 레벨계산은 잘됨.
-        switch Int(levelChagned) {
-                case 0..<20  :
-                    level = 1
-                    backimagenum=1
-                    imageShow()
-                case 20..<30 :
-                    level = 2
-                    backimagenum=2
-                    imageShow()
-                case 30..<40 :
-                    level = 3
-                    backimagenum=3
-                    imageShow()
-                case 40..<50 :
-                    level = 4
-                    backimagenum=4
-                     imageShow()
-                case 50..<60 :
-                    level = 5
-                    backimagenum=5
-                    imageShow()
-                case 60..<70 :
-                    level = 6
-                    backimagenum=6
-                    imageShow()
-                case 70..<80 :
-                    level = 7
-                    backimagenum=7
-                    imageShow()
-                case 80..<90 :
-                    level = 8
-                    backimagenum=8
-                    imageShow()
-                case 90..<100 :
-                    level = 9
-                    backimagenum=9
-                    imageShow()
-                case 100..<Int.max :
-                    level = 10
-                    backimagenum=9
-                    imageShow()
-                default :break
+        for i in stride(from: 2, through: 9, by: 1){
+            switch Int(levelChagned) {
+                    case 0..<20  :
+                        level = 1
+                        backimagenum=1
+                        imageShow()
+                    case i*10..<(i+1)*10 :
+                        level = Double(i)
+                        backimagenum=Int(i)
+                        imageShow()
+                    case 100..<Int.max :
+                        level = 10
+                        backimagenum=9
+                        imageShow()
+                    default :break
+                    }
             }
     }
     
