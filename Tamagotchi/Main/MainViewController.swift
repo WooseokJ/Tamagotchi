@@ -32,13 +32,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var TextButtonback1: UIView!// 밥먹기 텍스트필드 백그라운드
     
     var mainCenterLabel : String? // 타마 이름
-    var selectNumber : Int?
+    var selectNumber : String?
     
-    var tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
-    var level = UserDefaults.standard.value(forKey: "level") as! Double
-    var eatcnt = UserDefaults.standard.value(forKey: "eatcnt") as! Double
-    var drinkcnt = UserDefaults.standard.value(forKey: "drinkcnt") as! Double
-    var backimagenum = UserDefaults.standard.value(forKey: "backimagenum") as! Int
+    var level = UserDefaults.standard.bool(forKey: "level") ? UserDefaults.standard.double(forKey: "level") : 1.0
+    var eatcnt = UserDefaults.standard.bool(forKey: "eatcnt") ? UserDefaults.standard.double(forKey: "eatcnt") : 0.0
+    var drinkcnt = UserDefaults.standard.bool(forKey: "drinkcnt") ? UserDefaults.standard.double(forKey: "drinkcnt") : 0.0
+    
+                     
+    var foreimage = UserDefaults.standard.value(forKey: "foreimage") as! Int
+    var backimage = UserDefaults.standard.bool(forKey: "backimage") ? UserDefaults.standard.double(forKey: "backimage") : 1
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +50,6 @@ class MainViewController: UIViewController {
         let image = UIImage(systemName: "person")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(SettingButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = ColorName.fontcolor
-        navigationItem.title = "\(tamaname)님의 다마고치"
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
@@ -57,14 +60,19 @@ class MainViewController: UIViewController {
         
         //디자인
         MainTopimage.image = UIImage(named: "bubble")
-        MainImageView.image = UIImage(named: "\(selectNumber!)-\(backimagenum)")
-        MainContentLabel.MainContentLabelDesign(tamaname)
+        MainImageView.image = UIImage(named: "\(foreimage)-\(backimage)")
+        
         MainLevelLabel.text = "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainLevelLabel.textAlignment = .center
         MainNameImage.backgroundColor = ColorName.backgroundcolor
         MainEating.tintColor = ColorName.fontcolor
         MainDrinking.tintColor = ColorName.fontcolor
         
+        MainDrinking.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        MainEating.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+
+
+
         MainTamaName.text = mainCenterLabel
         MainTamaName.layer.cornerRadius = 2
         MainTamaName.backgroundColor = ColorName.backgroundcolor
@@ -94,8 +102,21 @@ class MainViewController: UIViewController {
         MainDrinkLine.backgroundColor = .black
         MainEatLine.backgroundColor = .black
         
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+//        saveData()
+        guard UserDefaults.standard.string(forKey: "tamaname") != nil else{ //  false
+            UserDefaults.standard.set("대장",forKey: "tamaname")
+            let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
+            navigationItem.title = "\(tamaname)님의 다마고치"
+            RandomText()
+            return
+        }
+        let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
+        print(tamaname)
+        navigationItem.title = "\(tamaname)님의 다마고치"
         RandomText()
     }
     
@@ -104,10 +125,8 @@ class MainViewController: UIViewController {
     @objc func SettingButtonClicked(){
         let sb = UIStoryboard(name:"Grow",bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
-        UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
-        UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
-        UserDefaults.standard.set(level, forKey: "level")
-        UserDefaults.standard.set(backimagenum, forKey: "backimagenum")
+        saveData()
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -119,6 +138,7 @@ class MainViewController: UIViewController {
         MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainEatingTextField.text = ""
         RandomText()
+        saveData()
     }
 
     
@@ -135,6 +155,8 @@ class MainViewController: UIViewController {
         MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainDrinkingTextField.text = ""
         RandomText()
+        saveData()
+        
     }
     
     //MARK: 물주기 텍스트필드
@@ -143,7 +165,7 @@ class MainViewController: UIViewController {
         drinkcnt += Double(count-1.0)
     }
     func imageShow(){
-        MainImageView.image = UIImage(named: "\(selectNumber!)-\(Int(backimagenum))")
+        MainImageView.image = UIImage(named: "\(foreimage)-\(Int(backimage))")
     }
     //MARK: 레벨계산
     func selectLavel(){
@@ -152,15 +174,16 @@ class MainViewController: UIViewController {
             switch Int(levelChagned) {
                     case 0..<19  :
                         level = 1
-                        backimagenum=1
+                        backimage=1
                         imageShow()
-                    case i*10..<((i+1)*10) - 1 :
+            case i*10..<((i+1)*10) - 1 :
                         level = Double(i)
-                        backimagenum=Int(i)
+                        backimage=Double(i)
                         imageShow()
+                        break
                     case 100..<Int.max :
                         level = 10
-                        backimagenum=9
+                        backimage=9
                         imageShow()
                     default :break
                     }
@@ -169,17 +192,29 @@ class MainViewController: UIViewController {
     //MARK: 랜덤텍스트추출
     /// - Parameters:
     /// - tamaname : 타마이름
-    ///
+//    var ls : [Int] = []
     func RandomText(){
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
-        navigationItem.title = "\(tamaname)님의 다마고치"
-        let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아요?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ","\(tamaname)님 오전10시까지인줄알았어요"]
-        let selectContent = Int.random(in: 0...Randomcontent.count-1)
-        MainContentLabel.text = Randomcontent[selectContent]
-//        MainContentLabel.text = Randomcontent.randomElement()
-        
+        while true{
+            let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아요?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ","\(tamaname)님 오전10시까지인줄알았어요"]
+
+            let randomchoich = Randomcontent.randomElement()
+            guard MainContentLabel.text != randomchoich else{
+                continue
+            }
+            MainContentLabel.text = randomchoich
+            MainContentLabel.textAlignment = .center
+            break
+        }
     }
     @IBAction func TapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    func saveData(){
+        UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
+        UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
+        UserDefaults.standard.set(level, forKey: "level")
+        UserDefaults.standard.set(backimage, forKey: "backimage")
+        UserDefaults.standard.set(foreimage,forKey: "foreimage")
     }
 }

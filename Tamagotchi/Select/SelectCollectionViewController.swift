@@ -3,8 +3,6 @@
 import UIKit
 
 class SelectCollectionViewController: UICollectionViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +26,12 @@ class SelectCollectionViewController: UICollectionViewController {
         navigationItem.standardAppearance = navigationBarAppearance
         navigationItem.scrollEdgeAppearance?.backgroundColor =  ColorName.backgroundcolor
         
-        // 데이터 저장
-        if UserDefaults.standard.string(forKey: "tamaname") == nil{
-            UserDefaults.standard.set("대장", forKey: "tamaname")
-            UserDefaults.standard.set("시작하기", forKey: "startbutton")
-            UserDefaults.standard.set("타마고치 시작하기", forKey: "tamachange")
-            UserDefaults.standard.set(1.0, forKey: "level")
-            UserDefaults.standard.set(0.0, forKey: "eatcnt")
-            UserDefaults.standard.set(0.0, forKey: "drinkcnt")
-            UserDefaults.standard.set(1, forKey: "backimagenum")
-            let right = ["대장님","",""]
-            UserDefaults.standard.set(right,forKey: "right")
-            
-        }
-        let navTitle = UserDefaults.standard.value(forKey: "tamachange") as! String
+        let startbutton = UserDefaults.standard.bool(forKey: "startbutton") ? "변경하기" : "시작하기"
+        UserDefaults.standard.set(startbutton,forKey: "startbutton")
+        let navTitle = UserDefaults.standard.bool(forKey: "changed") ? "타마고치 변경하기" : "타마고치 시작하기"
+        UserDefaults.standard.set(navTitle,forKey: "changed")
         navigationItem.title = navTitle
+       
     }
 
     // 컬렉션뷰 item 갯수 
@@ -64,16 +53,13 @@ class SelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let next = UIStoryboard(name: "Main", bundle: nil)
         let vc = next.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
-        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
-        let TamaData = TamaInfo().TamaAttribute[indexPath.row]
-
-        vc.takename = TamaData.name
-        vc.takeImage = TamaData.imageName
-        vc.takecontent = "저는 \(TamaData.name)입니당 키는 100km 몸무게는 150톤이에용 성격은 화끈하고 날라다닙니당~! 열심히 잘 먹고 잘 클 자신은 있답니당 방실방실!"
-        
-        vc.imageNum = indexPath.row + 1
+       
+        vc.takename = TamaInfo().TamaAttribute[indexPath.item].name
+        vc.takeimage = TamaInfo().TamaAttribute[indexPath.item].imageName
+      
+        UserDefaults.standard.set(indexPath.row+1, forKey: "foreimage")
         
         guard TamaInfo().TamaAttribute[indexPath.item].name != "준비중이에요" else{
             view.makeToast("준비중입니다.")

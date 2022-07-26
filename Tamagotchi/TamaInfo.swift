@@ -32,10 +32,8 @@ struct TamaInfo {
 //        for i in 1...9 {
 //            Tama(name: "따끔따끔 다마고치", imageName : "1-\(i)"),
 //        }
+     
         Tama(name: "따끔따끔 다마고치", imageName : "1-1"),
-        Tama(name: "방실방실 다마고치", imageName : "2-1"),
-        Tama(name: "방실방실 다마고치", imageName : "3-1"),
-        
         Tama(name: "따끔따끔 다마고치", imageName : "1-2"),
         Tama(name: "따끔따끔 다마고치", imageName : "1-3"),
         Tama(name: "따끔따끔 다마고치", imageName : "1-4"),

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ov2-DZ-Fsg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6gJ-qa-htj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -227,7 +227,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="360.86956521739131" y="68.973214285714278"/>
+            <point key="canvasLocation" x="1271.0144927536232" y="68.973214285714278"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="DaA-Am-Nmh">
@@ -239,30 +239,40 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="fga-9a-Wem" customClass="SettingTableViewCell" customModule="Tamagotchi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="94.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fga-9a-Wem" id="zhW-Uv-J4C">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="94.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="diX-By-kHR">
-                                            <rect key="frame" x="20" y="0.0" width="394" height="94.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="diX-By-kHR">
+                                            <rect key="frame" x="20" y="0.0" width="394" height="122"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-Nz-gkG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="94.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="122"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-cP-azx">
-                                                    <rect key="frame" x="60" y="0.0" width="254" height="94.5"/>
+                                                    <rect key="frame" x="70" y="0.0" width="200" height="122"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="T5v-Uv-l49"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dH-DK-0OG">
-                                                    <rect key="frame" x="324" y="0.0" width="70" height="94.5"/>
+                                                    <rect key="frame" x="290" y="0.0" width="104" height="122"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title=""/>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Xi-Nz-gkG" firstAttribute="top" secondItem="diX-By-kHR" secondAttribute="top" id="1re-r8-iqN"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Xi-Nz-gkG" secondAttribute="bottom" id="q1P-mQ-OE5"/>
+                                                <constraint firstAttribute="bottom" secondItem="6dH-DK-0OG" secondAttribute="bottom" id="qO8-Ec-jW4"/>
+                                                <constraint firstItem="PZy-cP-azx" firstAttribute="leading" secondItem="0Xi-Nz-gkG" secondAttribute="trailing" constant="20" id="qqc-A6-6Qa"/>
+                                                <constraint firstItem="6dH-DK-0OG" firstAttribute="top" secondItem="diX-By-kHR" secondAttribute="top" id="yfC-M6-2bN"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -287,7 +297,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEt-m6-xBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226.0869565217392" y="81.696428571428569"/>
+            <point key="canvasLocation" x="2136.231884057971" y="81.696428571428569"/>
         </scene>
         <!--Rename View Controller-->
         <scene sceneID="Xeo-5h-Rlg">
@@ -332,25 +342,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKv-JF-RIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="81"/>
+            <point key="canvasLocation" x="2989.8550724637685" y="80.357142857142847"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="jX6-Rf-cmm">
+        <scene sceneID="8Mo-n6-p0f">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ov2-DZ-Fsg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6gJ-qa-htj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q6D-mU-mwL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZtL-ik-s0Y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Nxe-Zg-HIL"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="bL3-G7-Spp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qX0-q1-Qpc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McT-qP-hu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-459" y="69"/>
+            <point key="canvasLocation" x="360.86956521739131" y="68.973214285714278"/>
         </scene>
     </scenes>
     <resources>

@@ -11,15 +11,8 @@ import Toast
 class DetailViewController: UIViewController {
 
     static var identifier = "DetailViewController"
-    var takename : String?
-    var takeImage : String?
-    var takecontent : String?
-    var imageNum : Int?
-    var level : Double?
-    var eatcnt : Double?
-    var drinkcnt : Double?
-    var backimagenum : Int?
- 
+    var takename : String? // 타마고치이름
+    var takeimage : String? // 타마고치 이미지
     @IBOutlet weak var detailConfirmButton: UIButton! //시작하기
     @IBOutlet weak var detailCancelButton: UIButton! // 취소
     @IBOutlet weak var detailCenterView: UIView! //중간 검은선
@@ -30,12 +23,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailNameLabel: UILabel! // 타마고치이름
     @IBOutlet weak var detailImageView: UIImageView! // 타마고치 이미지
     
-
-    let buttonname = UserDefaults.standard.value(forKey: "startbutton") as! String
+    
+    
     
     var detailTamaData = TamaInfo().TamaAttribute
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let buttonname = UserDefaults.standard.value(forKey: "startbutton") as! String
         //디자인
         bottomView.DetailCenterDesignView()
         detailCenterView.DetailCenterDesignView()
@@ -43,13 +38,13 @@ class DetailViewController: UIViewController {
         detailNameLabel.DetailNameDesign()
         detailCancelButton.DetailCencelDesign("취소")
         detailConfirmButton.DetailCorfirmDesign(buttonname)
-        detailContentLabel.detailContentLabelDesign(takecontent ?? " ")
+        detailContentLabel.detailContentLabelDesign(takename ?? " ")
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         backgroundView.backgroundColor = ColorName.backgroundcolor
         detailNameLabel.text = takename
         
-        detailImageView.image = UIImage(named: takeImage ?? "noImage")
-        guard takeImage != "noImage" else{
+        detailImageView.image = UIImage(named: takeimage ?? "noImage")
+        guard takeimage != "noImage" else{
             return detailContentLabel.text = "준비중입니다."
         }
     }
@@ -68,15 +63,22 @@ class DetailViewController: UIViewController {
         nav.modalPresentationStyle = .fullScreen
         
         vc.mainCenterLabel = takename
-        vc.selectNumber = imageNum
+   
         
-        UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
-        UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
-        UserDefaults.standard.set(level, forKey: "level")
-        UserDefaults.standard.set(backimagenum, forKey: "backimagenum")
+     
+    
+        UserDefaults.standard.set(true,forKey: "First")
+        UserDefaults.standard.set(true,forKey: "changed")
+        UserDefaults.standard.set(true,forKey: "startbutton")
         
-        self.present(nav,animated: false)
+//        UserDefaults.standard.set(true,forKey: "level")
+//        UserDefaults.standard.set(true,forKey: "drinkcnt")
+//        UserDefaults.standard.set(true,forKey: "eatcnt")
+//        UserDefaults.standard.set(true,forKey: "backimage")
+//        UserDefaults.standard.set(true,forKey: "tamaname")
 
+
+        self.present(nav,animated: false)
         
         
         
