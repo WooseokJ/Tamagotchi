@@ -21,26 +21,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var MainTamaName: UILabel!
     @IBOutlet weak var MainDrinking: UIButton! // 물주기버튼
     @IBOutlet weak var MainEating: UIButton! //밥먹기 버튼
-
     @IBOutlet weak var MainDrinkLine: UIView!// 물주기 버튼아래 검은선
     @IBOutlet weak var topImageView: UIView!// 말풍선 이미지 백그라운드
-    
     @IBOutlet weak var MainEatLine: UIView!//밥먹기 텍스트필드 검은선
-    
     @IBOutlet weak var TextButtonback2: UIView! // 물주기 텍스트필드 백그라운드
-    
     @IBOutlet weak var TextButtonback1: UIView!// 밥먹기 텍스트필드 백그라운드
-    
     var mainCenterLabel : String? // 타마 이름
     var selectNumber : String?
-    
     var level = UserDefaults.standard.bool(forKey: "level") ? UserDefaults.standard.double(forKey: "level") : 1.0
     var eatcnt = UserDefaults.standard.bool(forKey: "eatcnt") ? UserDefaults.standard.double(forKey: "eatcnt") : 0.0
     var drinkcnt = UserDefaults.standard.bool(forKey: "drinkcnt") ? UserDefaults.standard.double(forKey: "drinkcnt") : 0.0
-    
-                     
-    var foreimage = UserDefaults.standard.value(forKey: "foreimage") as! Int
     var backimage = UserDefaults.standard.bool(forKey: "backimage") ? UserDefaults.standard.double(forKey: "backimage") : 1
+    var foreimage = UserDefaults.standard.value(forKey: "foreimage") as! Int
 
     
     
@@ -61,16 +53,13 @@ class MainViewController: UIViewController {
         //디자인
         MainTopimage.image = UIImage(named: "bubble")
         MainImageView.image = UIImage(named: "\(foreimage)-\(backimage)")
-        
         MainLevelLabel.text = "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainLevelLabel.textAlignment = .center
         MainNameImage.backgroundColor = ColorName.backgroundcolor
         MainEating.tintColor = ColorName.fontcolor
         MainDrinking.tintColor = ColorName.fontcolor
-        
         MainDrinking.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         MainEating.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
-
 
 
         MainTamaName.text = mainCenterLabel
@@ -106,8 +95,7 @@ class MainViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-//        saveData()
-        guard UserDefaults.standard.string(forKey: "tamaname") != nil else{ //  false
+        guard UserDefaults.standard.string(forKey: "tamaname") != nil else{
             UserDefaults.standard.set("대장",forKey: "tamaname")
             let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
             navigationItem.title = "\(tamaname)님의 다마고치"
@@ -115,7 +103,6 @@ class MainViewController: UIViewController {
             return
         }
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
-        print(tamaname)
         navigationItem.title = "\(tamaname)님의 다마고치"
         RandomText()
     }
@@ -126,19 +113,17 @@ class MainViewController: UIViewController {
         let sb = UIStoryboard(name:"Grow",bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
         saveData()
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: 밥주기 버튼
     @IBAction func EatingButton(_ sender: UIButton) {
-        // 레벨계산
-        selectLavel()
+        selectLavel() // 레벨계산
         eatcnt+=1
         MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainEatingTextField.text = ""
-        RandomText()
-        saveData()
+        RandomText() //컨텐츠 내용 랜덤출력
+        saveData() // 데이터 저장하기
     }
 
     
@@ -150,12 +135,12 @@ class MainViewController: UIViewController {
     
     //MARK: 물주기 버튼
     @IBAction func DrinkningButton(_ sender: UIButton) {
-        selectLavel()
+        selectLavel() //계산하기
         drinkcnt += 1
         MainLevelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         MainDrinkingTextField.text = ""
-        RandomText()
-        saveData()
+        RandomText() //컨텐츠 내용 랜덤출력
+        saveData()  // 데이터 저장하기
         
     }
     
@@ -168,7 +153,7 @@ class MainViewController: UIViewController {
         MainImageView.image = UIImage(named: "\(foreimage)-\(Int(backimage))")
     }
     //MARK: 레벨계산
-    func selectLavel(){
+    func selectLavel(){ // for문만큼 더 돈다는 단점이있음. ㅠ
         let levelChagned : Double = Double((eatcnt/5)) + Double((drinkcnt / 2))
         for i in stride(from: 2, through: 9, by: 1){
             switch Int(levelChagned) {
@@ -197,7 +182,6 @@ class MainViewController: UIViewController {
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
         while true{
             let Randomcontent = ["\(tamaname)님 오늘 날씨가 좋네요.","\(tamaname)님 구조체 클래스차이알아요?","\(tamaname)님 나죽어...ㅠㅠ","\(tamaname)님 저 날밤샛어요ㅠㅠ","\(tamaname)님 오전10시까지인줄알았어요"]
-
             let randomchoich = Randomcontent.randomElement()
             guard MainContentLabel.text != randomchoich else{
                 continue
