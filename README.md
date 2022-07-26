@@ -4,7 +4,10 @@
 
 
 
-https://user-images.githubusercontent.com/55547933/181043578-6252c759-53e5-4b91-8e11-a43386bd559f.mp4
+https://user-images.githubusercontent.com/55547933/181045039-c0fd9d50-d2f8-45a9-81b6-13976a40e7f6.mp4
+
+
+
 
 
 #학습내용
