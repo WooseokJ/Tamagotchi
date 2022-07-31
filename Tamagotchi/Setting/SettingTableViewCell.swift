@@ -12,6 +12,7 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet weak var SettingButton: UIButton!
     @IBOutlet weak var SettingLabel: UILabel!
     @IBOutlet weak var SettingImage: UIImageView!
+    
     func design(_ data: [String]){
         SettingLabel.text = data[1]
         SettingLabel.textColor = ColorName.fontcolor

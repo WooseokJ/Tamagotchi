@@ -3,10 +3,11 @@
 import UIKit
 
 class SelectCollectionViewController: UICollectionViewController {
+    static var identifier = "SelectCollectionViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         // 컬렉션뷰 레이아웃 설정
         let layout = UICollectionViewFlowLayout()
         let spacing : CGFloat = 0
@@ -19,22 +20,16 @@ class SelectCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = layout
         
         // 네비게이션뷰
-        navigationItem.titleView?.tintColor = ColorName.fontcolor
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.configureWithDefaultBackground()
-        navigationItem.scrollEdgeAppearance = navigationBarAppearance
-        navigationItem.standardAppearance = navigationBarAppearance
-        navigationItem.scrollEdgeAppearance?.backgroundColor =  ColorName.backgroundcolor
+        navigationItem.navItemDesign()
         
         let startbutton = UserDefaults.standard.bool(forKey: "startbutton") ? "변경하기" : "시작하기"
         UserDefaults.standard.set(startbutton,forKey: "startbutton")
         let navTitle = UserDefaults.standard.bool(forKey: "changed") ? "타마고치 변경하기" : "타마고치 시작하기"
         UserDefaults.standard.set(navTitle,forKey: "changed")
         navigationItem.title = navTitle
-       
     }
-
-    // 컬렉션뷰 item 갯수 
+    
+    // 컬렉션뷰 item 갯수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TamaInfo().TamaAttribute.count
     }
@@ -52,13 +47,16 @@ class SelectCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let next = UIStoryboard(name: "Main", bundle: nil)
-        let vc = next.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        guard let vc = next.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else{
+            return
+        }
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overCurrentContext // fullScreen+뒤에투명
-       
-        vc.takename = TamaInfo().TamaAttribute[indexPath.item].name
+        let tamaName = TamaInfo().TamaAttribute[indexPath.item].name
+        UserDefaults.standard.set(tamaName,forKey:"tamaSelectName")
+        
         vc.takeimage = TamaInfo().TamaAttribute[indexPath.item].imageName
-      
+        
         UserDefaults.standard.set(indexPath.row+1, forKey: "foreimage")
         
         guard TamaInfo().TamaAttribute[indexPath.item].name != "준비중이에요" else{
@@ -66,17 +64,12 @@ class SelectCollectionViewController: UICollectionViewController {
             return
         }
         present(nav, animated: true, completion: nil)
-        
-        
-        
-        
-        
-        
-        }
+
+    }
     
 }
-    
-    
-    
-  
+
+
+
+
 

@@ -1,6 +1,7 @@
 import UIKit
 
 class RenameViewController: UIViewController {
+    static var identifier = "RenameViewController"
     
     @IBOutlet weak var Textback: UIView! // 텍스트필드 아래 검은색 선
     @IBOutlet weak var renameTextField: UITextField! // 이름바꾸는 텍스트필드
@@ -17,7 +18,6 @@ class RenameViewController: UIViewController {
         navigationController?.navigationBar.tintColor = ColorName.fontcolor
         renameTextField.borderStyle = .none
         Textback.backgroundColor = .black
-        
     }
     // 네비게이션 뷰 저장하기
     @objc func saveButtonClicked() {

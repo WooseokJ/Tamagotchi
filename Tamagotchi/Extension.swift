@@ -1,10 +1,6 @@
 import UIKit
 
 
-class NameClass{
-    static var rename : String?
-}
-
 class ColorName{
     static var backgroundcolor = UIColor(red:245/255, green: 252/255, blue:252/255,alpha: 1)
     static var fontcolor = UIColor(red:77/255, green: 106/255, blue:120/255, alpha: 1)
@@ -39,6 +35,13 @@ extension UILabel{
         self.textAlignment = .center
         self.numberOfLines = 0
     }
+    
+    func MainDesignLabel(text : String){
+        self.text = text
+        self.layer.cornerRadius = 2
+        self.backgroundColor = ColorName.backgroundcolor
+        self.textAlignment = .center
+    }
 
     
 }
@@ -54,7 +57,40 @@ extension UIButton{
         self.setTitle(titlename, for: .normal)
         
     }
+    func MainDesingButton(tintcolor: UIColor, title: String, imagename: String){
+        self.tintColor = tintcolor
+        self.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        self.setTitle(title, for: .normal)
+        self.setImage(UIImage(systemName: imagename), for: .normal)
+    }
+    
 }
+
+
+extension UITextField{
+    func DesignTextField(title: String){
+        self.placeholder = title
+        self.textAlignment = .center
+        self.backgroundColor = ColorName.backgroundcolor
+        self.keyboardType = .numberPad
+        self.borderStyle = .none
+    }
+}
+
+
+extension UINavigationItem{
+    func navItemDesign(){
+        self.titleView?.tintColor = ColorName.fontcolor
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithDefaultBackground()
+        self.scrollEdgeAppearance = navigationBarAppearance
+        self.standardAppearance = navigationBarAppearance
+        self.scrollEdgeAppearance?.backgroundColor =  ColorName.backgroundcolor
+    }
+
+}
+
+
 
 
 //static 변수는 초기화할떄 초기화가안됨.

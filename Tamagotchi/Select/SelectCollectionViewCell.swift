@@ -1,7 +1,7 @@
 
 
 import UIKit
-import Kingfisher
+
 
 
 class SelectCollectionViewCell: UICollectionViewCell {
@@ -27,6 +27,8 @@ class SelectCollectionViewCell: UICollectionViewCell {
         selectImage.layer.borderWidth = 2
         selectImage.clipsToBounds = true
     }
+    
+    
 }
 
 
