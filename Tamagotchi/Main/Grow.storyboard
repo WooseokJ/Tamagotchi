@@ -203,21 +203,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="8oh-YW-6sJ"/>
                     <connections>
-                        <outlet property="MainContentLabel" destination="2nK-kZ-7JO" id="EEN-dM-ICM"/>
-                        <outlet property="MainDrinkLine" destination="pc4-cZ-CX2" id="9rg-zG-H04"/>
-                        <outlet property="MainDrinking" destination="EbH-PY-Ocl" id="ZwV-9T-JPe"/>
-                        <outlet property="MainDrinkingTextField" destination="fkz-KC-MXn" id="cCS-G1-wfr"/>
-                        <outlet property="MainEatLine" destination="Yay-f2-Ne2" id="drZ-fb-o9L"/>
-                        <outlet property="MainEating" destination="Zub-lR-psM" id="mUp-TV-lam"/>
-                        <outlet property="MainEatingTextField" destination="eRJ-pQ-djY" id="h0I-Ns-zkA"/>
-                        <outlet property="MainImageView" destination="eb0-Ad-hfs" id="OlB-b6-NdW"/>
-                        <outlet property="MainLevelLabel" destination="Wlu-1V-I3z" id="Y9b-rF-aez"/>
-                        <outlet property="MainNameImage" destination="pls-Kt-mHj" id="22I-dA-QbM"/>
-                        <outlet property="MainTamaName" destination="jSa-ag-ukc" id="8ET-P0-Gi6"/>
-                        <outlet property="MainTopimage" destination="nQG-CX-RxK" id="uNW-v2-c6n"/>
-                        <outlet property="TextButtonback1" destination="QgH-NC-N9f" id="X8K-dd-K1c"/>
-                        <outlet property="TextButtonback2" destination="Uz4-EM-X7h" id="Hiy-8I-8Z4"/>
-                        <outlet property="topImageView" destination="qzh-PU-wwk" id="EP3-j6-EsL"/>
+                        <outlet property="drinkTextField" destination="fkz-KC-MXn" id="cCS-G1-wfr"/>
+                        <outlet property="drinkingButton" destination="EbH-PY-Ocl" id="ZwV-9T-JPe"/>
+                        <outlet property="drinkingLineView" destination="pc4-cZ-CX2" id="9rg-zG-H04"/>
+                        <outlet property="eatLineView" destination="Yay-f2-Ne2" id="drZ-fb-o9L"/>
+                        <outlet property="eatingButton" destination="Zub-lR-psM" id="mUp-TV-lam"/>
+                        <outlet property="eatingTextfield" destination="eRJ-pQ-djY" id="h0I-Ns-zkA"/>
+                        <outlet property="levelLabel" destination="Wlu-1V-I3z" id="Y9b-rF-aez"/>
+                        <outlet property="nameBackView" destination="pls-Kt-mHj" id="22I-dA-QbM"/>
+                        <outlet property="talkBackView" destination="qzh-PU-wwk" id="EP3-j6-EsL"/>
+                        <outlet property="talkContentLabel" destination="2nK-kZ-7JO" id="EEN-dM-ICM"/>
+                        <outlet property="talkImageView" destination="nQG-CX-RxK" id="uNW-v2-c6n"/>
+                        <outlet property="tamaImageView" destination="eb0-Ad-hfs" id="OlB-b6-NdW"/>
+                        <outlet property="tamaNameLabel" destination="jSa-ag-ukc" id="8ET-P0-Gi6"/>
+                        <outlet property="textDrinkingBackButtonView" destination="Uz4-EM-X7h" id="Hiy-8I-8Z4"/>
+                        <outlet property="textEatButtonView" destination="QgH-NC-N9f" id="X8K-dd-K1c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,9 +283,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="SettingButton" destination="6dH-DK-0OG" id="OU8-d0-bQs"/>
-                                    <outlet property="SettingImage" destination="0Xi-Nz-gkG" id="w7K-NN-2g2"/>
-                                    <outlet property="SettingLabel" destination="PZy-cP-azx" id="gFw-LK-INc"/>
+                                    <outlet property="settingButton" destination="6dH-DK-0OG" id="OU8-d0-bQs"/>
+                                    <outlet property="settingImageView" destination="0Xi-Nz-gkG" id="w7K-NN-2g2"/>
+                                    <outlet property="settingLabel" destination="PZy-cP-azx" id="gFw-LK-INc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -336,8 +336,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9Ax-36-dmz"/>
                     <connections>
-                        <outlet property="Textback" destination="VDu-77-UaZ" id="rTi-1C-G3y"/>
                         <outlet property="renameTextField" destination="ZKw-EM-n25" id="pOr-iv-yUM"/>
+                        <outlet property="textLineView" destination="VDu-77-UaZ" id="rTi-1C-G3y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKv-JF-RIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -350,7 +350,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6gJ-qa-htj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZtL-ik-s0Y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

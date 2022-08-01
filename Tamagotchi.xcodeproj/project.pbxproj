@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E15EBB1528980C39003B9049 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EBB1428980C39003B9049 /* ReuseIdentifier.swift */; };
 		E18CF9AA288AAC1E005C99E7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9A9288AAC1E005C99E7 /* Extension.swift */; };
 		E18CF9AC288AB1A1005C99E7 /* TamaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */; };
 		E18CF9AE288AB1CB005C99E7 /* StructTamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E15EBB1428980C39003B9049 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		E18CF9A9288AAC1E005C99E7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamaInfo.swift; sourceTree = "<group>"; };
 		E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTamagotchi.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				E18CF9A9288AAC1E005C99E7 /* Extension.swift */,
 				E18CF9AB288AB1A1005C99E7 /* TamaInfo.swift */,
 				E18CF9AD288AB1CB005C99E7 /* StructTamagotchi.swift */,
+				E15EBB1428980C39003B9049 /* ReuseIdentifier.swift */,
 				E1C6CB1E288A75BF00FF8C32 /* Rename */,
 				E1C6CB1D288A759900FF8C32 /* Setting */,
 				E1C6CB1B288A755800FF8C32 /* Main */,
@@ -247,6 +250,7 @@
 				E1C6CB2A288A77A000FF8C32 /* SelectCollectionViewController.swift in Sources */,
 				E1C6CB24288A764C00FF8C32 /* SettingTableViewCell.swift in Sources */,
 				E1C6CB28288A775E00FF8C32 /* MainViewController.swift in Sources */,
+				E15EBB1528980C39003B9049 /* ReuseIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

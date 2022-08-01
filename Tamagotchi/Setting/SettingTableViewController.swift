@@ -1,15 +1,14 @@
 import UIKit
 
-enum cellContent : CaseIterable{
+enum cellContent : CaseIterable {
     case left,center,right
-    var sectionTitle : [String]{
+    var sectionTitle : [String] {
         switch self {
         case .left : return ["pencil","내이름 설정하기",UserDefaults.standard.string(forKey: "tamaname")!+"님"]
         case .center : return ["moon.fill","다마고치 변경하기",""]
         case .right : return["arrow.clockwise","데이터 초기화",""]
         }
     }
-    
 }
 
 
@@ -56,7 +55,7 @@ class SettingTableViewController: UITableViewController {
             navigationItem.titleView?.tintColor = ColorName.fontcolor
         case 1: // 타마고치 변경하기
             let sb = UIStoryboard(name:"Main",bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as! SelectCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.reuseIdentifier) as! SelectCollectionViewController
             UserDefaults.standard.set(true, forKey: "startbutton")
             UserDefaults.standard.set(true, forKey: "tamachange")
             
@@ -75,7 +74,7 @@ class SettingTableViewController: UITableViewController {
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as! SelectCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.reuseIdentifier) as! SelectCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             for key in UserDefaults.standard.dictionaryRepresentation().keys {
                 UserDefaults.standard.removeObject(forKey: key.description)

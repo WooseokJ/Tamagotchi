@@ -9,19 +9,17 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
  
-    @IBOutlet weak var SettingButton: UIButton!
-    @IBOutlet weak var SettingLabel: UILabel!
-    @IBOutlet weak var SettingImage: UIImageView!
+    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var settingImageView: UIImageView!
     
-    func design(_ data: [String]){
-        SettingLabel.text = data[1]
-        SettingLabel.textColor = ColorName.fontcolor
-        
-        SettingButton.setTitle(data[2], for: .normal)
-        SettingButton.tintColor = ColorName.fontcolor
-        
-        SettingImage.tintColor = ColorName.fontcolor
-        SettingImage.image = UIImage(systemName: data[0])
+    func design(_ data: [String]) {
+        settingLabel.text = data[1]
+        settingLabel.textColor = ColorName.fontcolor
+        settingButton.setTitle(data[2], for: .normal)
+        settingButton.tintColor = ColorName.fontcolor
+        settingImageView.tintColor = ColorName.fontcolor
+        settingImageView.image = UIImage(systemName: data[0])
         detailTextLabel?.textColor = .systemGray
         backgroundColor = ColorName.backgroundcolor
         imageView?.tintColor = ColorName.fontcolor
@@ -29,4 +27,5 @@ class SettingTableViewCell: UITableViewCell {
         focusStyle = .custom
 
     }
+
 }

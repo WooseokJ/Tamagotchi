@@ -3,7 +3,7 @@
 import UIKit
 
 class SelectCollectionViewController: UICollectionViewController {
-    static var identifier = "SelectCollectionViewController"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class SelectCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectCollectionViewCell", for: indexPath) as? SelectCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCollectionViewCell.reuseIdentifier, for: indexPath) as? SelectCollectionViewCell
         else{
             return UICollectionViewCell()
         }
@@ -47,7 +47,7 @@ class SelectCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let next = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = next.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else{
+        guard let vc = next.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else {
             return
         }
         let nav = UINavigationController(rootViewController: vc)

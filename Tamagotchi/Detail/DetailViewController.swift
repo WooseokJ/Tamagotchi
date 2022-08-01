@@ -10,8 +10,6 @@ import Toast
 
 class DetailViewController: UIViewController {
     
-    static var identifier = "DetailViewController"
-    
     var takeimage : String? // 타마고치 이미지
     @IBOutlet weak var confirmButton: UIButton! //시작하기
     @IBOutlet weak var cancelButton: UIButton! // 취소
@@ -22,10 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailContentLabel: UILabel! // 타마고치 설명
     @IBOutlet weak var detailNameLabel: UILabel! // 타마고치이름
     @IBOutlet weak var detailImageView: UIImageView! // 타마고치 이미지
-    
-    
-    
-    
+
     var detailTamaData = TamaInfo().TamaAttribute
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +43,6 @@ class DetailViewController: UIViewController {
             return detailContentLabel.text = "준비중입니다."
         }
     }
-    
-    
     //취소버튼
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true)
@@ -58,7 +51,7 @@ class DetailViewController: UIViewController {
     // 확인버튼
     @IBAction func ConfirmButton(_ sender: UIButton) {
         let next = UIStoryboard(name: "Grow", bundle: nil)
-        guard let vc = next.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else{
+        guard let vc = next.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else{
             return
         }
         let nav = UINavigationController(rootViewController: vc)
@@ -68,14 +61,7 @@ class DetailViewController: UIViewController {
         UserDefaults.standard.set(true,forKey: "changed")
         UserDefaults.standard.set(true,forKey: "startbutton")
         self.present(nav,animated: false)
-        
-        
-        
     }
-    
-    
-    
-    
 }
 
 
