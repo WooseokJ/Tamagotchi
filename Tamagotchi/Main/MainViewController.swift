@@ -99,12 +99,14 @@ class MainViewController: UIViewController {
             navigationItem.title = "\(tamaname!)님의 다마고치"
             tamaNameTitle = tamaname
             randomText()
+            selectLavel()
             return
         }
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
         navigationItem.title = "\(tamaname)님의 다마고치"
         tamaNameTitle = tamaname
         randomText()
+        selectLavel()
     }
     
     

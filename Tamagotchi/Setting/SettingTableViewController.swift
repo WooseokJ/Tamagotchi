@@ -49,7 +49,7 @@ class SettingTableViewController: UITableViewController {
         switch indexPath.row{
         case 0 : // 이름바꾸기
             let sb = UIStoryboard(name:"Grow",bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: RenameViewController.identifier) as! RenameViewController
+            let vc = sb.instantiateViewController(withIdentifier: RenameViewController.reuseIdentifier) as! RenameViewController
             self.navigationController?.pushViewController(vc, animated: true)
             navigationItem.backButtonTitle = "설정"
             navigationItem.titleView?.tintColor = ColorName.fontcolor
