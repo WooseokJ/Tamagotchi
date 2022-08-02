@@ -27,13 +27,10 @@ class MainViewController: UIViewController {
     
     var mainCenterLabel = UserDefaults.standard.string(forKey:"tamaSelectName") 
     var selectNumber : String?
-    
-    //    var level = UserDefaults.standard.bool(forKey: "level") ? UserDefaults.standard.double(forKey: "level") : 1.0
-    
-    var eatcnt = UserDefaults.standard.bool(forKey: "eatcnt") ? UserDefaults.standard.double(forKey: "eatcnt") : 0.0
-    var drinkcnt = UserDefaults.standard.bool(forKey: "drinkcnt") ? UserDefaults.standard.double(forKey: "drinkcnt") : 0.0
-    var backimage = UserDefaults.standard.bool(forKey: "backimage") ? UserDefaults.standard.double(forKey: "backimage") : 1
-    var foreimage = UserDefaults.standard.value(forKey: "foreimage") as! Int
+    var eatCount = UserDefaults.standard.bool(forKey: "eatcnt") ? UserDefaults.standard.double(forKey: "eatcnt") : 0.0
+    var drinkCount = UserDefaults.standard.bool(forKey: "drinkcnt") ? UserDefaults.standard.double(forKey: "drinkcnt") : 0.0
+    var backImage = UserDefaults.standard.bool(forKey: "backimage") ? UserDefaults.standard.double(forKey: "backimage") : 1
+    var foreImage = UserDefaults.standard.value(forKey: "foreimage") as! Int
     
     var tamaNameDefalut : String = "대장"
     var tamaNameTitle : String?
@@ -41,7 +38,7 @@ class MainViewController: UIViewController {
     var newlevel : Int = 0
     var level : Int{
         get{
-            count = Int(((eatcnt/5) + (drinkcnt / 2)))
+            count = Int(((eatCount/5) + (drinkCount / 2)))
             
             guard count > 20 else{
                 return 1
@@ -72,7 +69,7 @@ class MainViewController: UIViewController {
         
         // 이미지
         talkImageView.image = UIImage(named: "bubble")
-        tamaImageView.image = UIImage(named: "\(foreimage)-\(backimage)")
+        tamaImageView.image = UIImage(named: "\(foreImage)-\(backImage)")
         
         //버튼
         eatingButton.MainDesingButton(tintcolor: ColorName.fontcolor, title: "밥먹기", imagename: "leaf.circle")
@@ -88,20 +85,20 @@ class MainViewController: UIViewController {
         
         //라벨
         tamaNameLabel.MainDesignLabel(text : mainCenterLabel!)
-        levelLabel.MainDesignLabel(text: "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))")
+        levelLabel.MainDesignLabel(text: "LV \(Int(level)) 밥알 \(Int(eatCount))개 물방울 \(Int(drinkCount))")
         drinkTextField.DesignTextField(title: "물주세요")
         eatingTextfield.DesignTextField(title: "밥주세요")
     }
     override func viewWillAppear(_ animated: Bool) {
         guard UserDefaults.standard.string(forKey: "tamaname") != nil else{
             UserDefaults.standard.set(tamaNameDefalut,forKey: "tamaname")
-            let tamaname = UserDefaults.standard.string(forKey: "tamaname")
-            navigationItem.title = "\(tamaname!)님의 다마고치"
-            tamaNameTitle = tamaname
-            randomText()
-            selectLavel()
+            willApearStart()
             return
         }
+        willApearStart()
+    }
+    //MARK: 화면이 나타나는 도중실행함수
+    func willApearStart(){
         let tamaname = UserDefaults.standard.value(forKey: "tamaname") as! String
         navigationItem.title = "\(tamaname)님의 다마고치"
         tamaNameTitle = tamaname
@@ -123,18 +120,19 @@ class MainViewController: UIViewController {
     //MARK: 밥주기 버튼
     @IBAction func EatingButton(_ sender: UIButton) {
         selectLavel() // 레벨 계산
-        eatcnt+=1
+        eatCount+=1
         print("밥주기"+String(level))
         guard level < 10 else {
             level = 10
-            levelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
             eatingTextfield.text = ""
-            randomText() //컨텐츠 내용 랜덤출력
-            saveData() // 데이터 저장하기
+            levelCalc()
             return
         }
-        levelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
         eatingTextfield.text = ""
+        levelCalc()
+    }
+    func levelCalc(){
+        levelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatCount))개 물방울 \(Int(drinkCount))"
         randomText() //컨텐츠 내용 랜덤출력
         saveData() // 데이터 저장하기
     }
@@ -142,42 +140,37 @@ class MainViewController: UIViewController {
     
     //MARK: 밥주기 텍스트필드
     @IBAction func InputEating(_ sender: UITextField) {
-        guard let count = Double(sender.text ?? "0") else { return  }
-        eatcnt += Double(count-1.0)
+        guard let count = Double(sender.text ?? "0") else {return}
+        eatCount += Double(count-1.0)
     }
     
     //MARK: 물주기 버튼
     @IBAction func DrinkningButton(_ sender: UIButton) {
         selectLavel() //계산하기
-        drinkcnt += 1
+        drinkCount += 1
         guard level < 10 else {
-            levelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
+            levelCalc()
             eatingTextfield.text = ""
-            //            RandomText() //컨텐츠 내용 랜덤출력
-            saveData() // 데이터 저장하기
             return
         }
-        levelLabel.text =  "LV \(Int(level)) 밥알 \(Int(eatcnt))개 물방울 \(Int(drinkcnt))"
+        levelCalc()
         drinkTextField.text = ""
-        randomText() //컨텐츠 내용 랜덤출력
-        saveData()  // 데이터 저장하기
     }
     
     
     //MARK: 물주기 텍스트필드
     @IBAction func inputDrinking(_ sender: UITextField) {
-        guard let count = Double(sender.text ?? "0") else { return  }
-        drinkcnt += Double(count-1.0)
+        guard let count = Double(sender.text ?? "0") else {return}
+        drinkCount += Double(count-1.0)
     }
     
     //MARK: 레벨계산
     func selectLavel() {
         guard level < 10 else {
-            tamaImageView.image = UIImage(named: "\(foreimage)-9")
-            print(level)
+            tamaImageView.image = UIImage(named: "\(foreImage)-9")
             return
         }
-        tamaImageView.image = UIImage(named: "\(foreimage)-\(Int(level))")
+        tamaImageView.image = UIImage(named: "\(foreImage)-\(Int(level))")
     }
     //MARK: 랜덤텍스트추출
     /// - Parameters:
@@ -196,13 +189,15 @@ class MainViewController: UIViewController {
             break
         }
     }
+    //MARK: 다른영역 클릭시
     @IBAction func TapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    //MARK: Userdefalut 저장
     func saveData() {
-        UserDefaults.standard.set(eatcnt, forKey: "eatcnt")
-        UserDefaults.standard.set(drinkcnt, forKey: "drinkcnt")
-        UserDefaults.standard.set(backimage, forKey: "backimage")
-        UserDefaults.standard.set(foreimage,forKey: "foreimage")
+        UserDefaults.standard.set(eatCount, forKey: "eatcnt")
+        UserDefaults.standard.set(drinkCount, forKey: "drinkcnt")
+        UserDefaults.standard.set(backImage, forKey: "backimage")
+        UserDefaults.standard.set(foreImage,forKey: "foreimage")
     }
 }

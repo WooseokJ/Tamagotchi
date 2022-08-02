@@ -10,6 +10,7 @@ class SelectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectImage: UIImageView!
   
+    //타마고치 관련 디자인
     func DesignTama(data:Tama){
         nameLabel.font = .systemFont(ofSize: 13)
         nameLabel.text = data.name
@@ -27,6 +28,8 @@ class SelectCollectionViewCell: UICollectionViewCell {
         selectImage.layer.borderWidth = 2
         selectImage.clipsToBounds = true
     }
+    
+
     
     
 }

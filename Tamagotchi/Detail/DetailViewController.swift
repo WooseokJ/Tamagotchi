@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let takename = UserDefaults.standard.string(forKey:"tamaSelectName")
         let buttonname = UserDefaults.standard.value(forKey: "startbutton") as! String
-        //디자인
+        //MARK: 디자인
         bottomView.DetailCenterDesignView()
         detailCenterView.DetailCenterDesignView()
         detailView.DetailbackDesignView()
@@ -43,12 +43,12 @@ class DetailViewController: UIViewController {
             return detailContentLabel.text = "준비중입니다."
         }
     }
-    //취소버튼
+    //MARK: 취소버튼
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-    // 확인버튼
+    //MARK: 확인버튼
     @IBAction func ConfirmButton(_ sender: UIButton) {
         let next = UIStoryboard(name: "Grow", bundle: nil)
         guard let vc = next.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else{
@@ -56,7 +56,6 @@ class DetailViewController: UIViewController {
         }
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
-        
         UserDefaults.standard.set(true,forKey: "First")
         UserDefaults.standard.set(true,forKey: "changed")
         UserDefaults.standard.set(true,forKey: "startbutton")

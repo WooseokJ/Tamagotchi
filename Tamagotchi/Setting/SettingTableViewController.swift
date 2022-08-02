@@ -27,9 +27,7 @@ class SettingTableViewController: UITableViewController {
         navigationItem.title = "설정"
         navigationItem.backButtonTitle = " "
         navigationController?.navigationBar.tintColor = ColorName.fontcolor
-        
     }
-    
     
     // 섹션개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,16 +35,15 @@ class SettingTableViewController: UITableViewController {
     }
     //셀 값넣기
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as! SettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier) as! SettingTableViewCell
         let rowTitle = cellContent.allCases[indexPath.row].sectionTitle
         cell.design(rowTitle)
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.row{
+        switch indexPath.row {
         case 0 : // 이름바꾸기
             let sb = UIStoryboard(name:"Grow",bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: RenameViewController.reuseIdentifier) as! RenameViewController
@@ -69,6 +66,7 @@ class SettingTableViewController: UITableViewController {
             present(alert, animated: true, completion: nil)
         default:break
         }
+        
         // 초기화
         func refreshClicked(){
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
