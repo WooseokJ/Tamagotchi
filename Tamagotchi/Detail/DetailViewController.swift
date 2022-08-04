@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
     //MARK: 확인버튼
     @IBAction func ConfirmButton(_ sender: UIButton) {
         let next = UIStoryboard(name: "Grow", bundle: nil)
-        guard let vc = next.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else{
+        guard let vc = next.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else {
             return
         }
         let nav = UINavigationController(rootViewController: vc)
